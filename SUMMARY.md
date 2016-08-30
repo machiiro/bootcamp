@@ -1,7 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
-* コア JavaScript
+* [コア JavaScript](core/README.md)
   * [JavaScript とは](core/01_what.md)
   * [データ型](core/02_type.md)
   * [文法](core/03_syntax.md)

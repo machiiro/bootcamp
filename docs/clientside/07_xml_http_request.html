@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html lang="" >
     <head>
-        <title>タイマー · GitBook</title>
+        <title>XMLHttpRequest · GitBook</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="05_dom.html" />
+    <link rel="next" href="08_html5.html" />
     
     
-    <link rel="prev" href="03_dialog.html" />
+    <link rel="prev" href="06_event.html" />
     
 
     </head>
@@ -291,7 +291,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.4" data-path="04_timer.html">
+        <li class="chapter " data-level="1.3.4" data-path="04_timer.html">
             
                 <a href="04_timer.html">
             
@@ -330,7 +330,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.7" data-path="07_xml_http_request.html">
+        <li class="chapter active" data-level="1.3.7" data-path="07_xml_http_request.html">
             
                 <a href="07_xml_http_request.html">
             
@@ -417,7 +417,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >タイマー</a>
+        <a href=".." >XMLHttpRequest</a>
     </h1>
 </div>
 
@@ -432,20 +432,63 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x30BF;&#x30A4;&#x30DE;&#x30FC;">&#x30BF;&#x30A4;&#x30DE;&#x30FC;</h1><p>&#x30BF;&#x30A4;&#x30DE;&#x30FC;&#x95A2;&#x6570;&#x3092;&#x4F7F;&#x7528;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x3001;&#x6307;&#x5B9A;&#x3057;&#x305F;&#x6642;&#x9593;&#x7D4C;&#x904E;&#x5F8C;&#x306B;&#x4EFB;&#x610F;&#x306E;&#x95A2;&#x6570;&#x3092;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p><h2 id="settimeout---&#x6307;&#x5B9A;&#x6642;&#x9593;&#x7D4C;&#x904E;&#x5F8C;&#x306B;&#x4E00;&#x5EA6;&#x3060;&#x3051;&#x547C;&#x3073;&#x51FA;&#x3055;&#x308C;&#x308B;">setTimeout - &#x6307;&#x5B9A;&#x6642;&#x9593;&#x7D4C;&#x904E;&#x5F8C;&#x306B;&#x4E00;&#x5EA6;&#x3060;&#x3051;&#x547C;&#x3073;&#x51FA;&#x3055;&#x308C;&#x308B;</h2><p><code>setTimeout</code> &#x306E;&#x7B2C;1&#x5F15;&#x6570;&#x306B;&#x95A2;&#x6570;&#x3001;&#x7B2C;2&#x5F15;&#x6570;&#x306B;&#x7D4C;&#x904E;&#x6642;&#x9593; (ms) &#x3092;&#x6307;&#x5B9A;&#x3057;&#x307E;&#x3059;&#x3002;</p><pre><code class="lang-JavaScript"><span class="hljs-comment">// 2&#x79D2;&#x5F8C;&#x306B;&#x5B9F;&#x884C;</span>
-<span class="hljs-keyword">var</span> timerId = setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-comment">// &#x51E6;&#x7406;&#x3092;&#x8A18;&#x8FF0;...</span>
-}, <span class="hljs-number">2000</span>);
+                                <h1 id="xmlhttprequest">XMLHttpRequest</h1><p>JavaScript &#x304B;&#x3089; HTTP &#x30EA;&#x30AF;&#x30A8;&#x30B9;&#x30C8;&#x3092;&#x9001;&#x4FE1;&#x3059;&#x308B;&#x305F;&#x3081;&#x306E; API &#x3068;&#x3057;&#x3066; XMLHttpRequest &#x304C;&#x63D0;&#x4F9B;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p><p>&#x540D;&#x79F0;&#x306B; <a href="https://ja.wikipedia.org/wiki/Extensible_Markup_Language" target="_blank">XML</a> &#x3068;&#x3044;&#x3046;&#x540D;&#x524D;&#x3092;&#x542B;&#x3093;&#x3067;&#x3044;&#x307E;&#x3059;&#x304C;&#x3001;XML &#x306E;&#x307F;&#x3057;&#x304B;&#x6271;&#x3048;&#x306A;&#x3044;&#x308F;&#x3051;&#x3067;&#x306F;&#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&#x3002;</p><p>&#x307E;&#x305F; <a href="https://ja.wikipedia.org/wiki/Ajax" target="_blank">Ajax</a> &#x3068;&#x6DF7;&#x540C;&#x3057;&#x304C;&#x3061;&#x3067;&#x3059;&#x304C;&#x3001;Ajax &#x306F; XMLHttpRequest API &#x3092;&#x7528;&#x3044;&#x305F;&#x30D7;&#x30ED;&#x30B0;&#x30E9;&#x30DF;&#x30F3;&#x30B0;&#x624B;&#x6CD5;&#x306E;&#x3053;&#x3068;&#x3092;&#x6307;&#x3057;&#x307E;&#x3059;&#x3002;</p><h2 id="get-&#x30EA;&#x30AF;&#x30A8;&#x30B9;&#x30C8;">GET &#x30EA;&#x30AF;&#x30A8;&#x30B9;&#x30C8;</h2><pre><code class="lang-javascript"><span class="hljs-keyword">var</span> request = <span class="hljs-keyword">new</span> XMLHttpRequest();
 
-<span class="hljs-comment">// &#x5B9F;&#x884C;&#x3092;&#x30AD;&#x30E3;&#x30F3;&#x30BB;&#x30EB;</span>
-clearTimeout(timerId);</code></pre>
-<p>&#x3061;&#x306A;&#x307F;&#x306B;&#x7D4C;&#x904E;&#x6642;&#x9593;&#x3092; <code>0</code> &#x306B;&#x3057;&#x3066;&#x3082;&#x3001;&#x95A2;&#x6570;&#x306F;&#x5373;&#x6642;&#x5B9F;&#x884C;&#x3055;&#x308C;&#x308B;&#x308F;&#x3051;&#x3067;&#x306F;&#x3042;&#x308A;&#x307E;&#x305B;&#x3093;&#x3002;</p><p>&#x30BF;&#x30A4;&#x30DE;&#x30FC;&#x95A2;&#x6570;&#x306B;&#x6307;&#x5B9A;&#x3057;&#x305F;&#x95A2;&#x6570;&#x306F;&#x3001;&#x5B9F;&#x884C;&#x30AD;&#x30E5;&#x30FC;&#x306B;&#x300C;&#x3067;&#x304D;&#x308B;&#x3060;&#x3051;&#x65E9;&#x304F;&#x300D;&#x5B9F;&#x884C;&#x3055;&#x308C;&#x308B;&#x3088;&#x3046;&#x914D;&#x7F6E;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p><h2 id="setinterval---&#x6307;&#x5B9A;&#x6642;&#x9593;&#x7D4C;&#x904E;&#x306E;&#x5EA6;&#x306B;&#x95A2;&#x6570;&#x304C;&#x547C;&#x3073;&#x51FA;&#x3055;&#x308C;&#x308B;">setInterval - &#x6307;&#x5B9A;&#x6642;&#x9593;&#x7D4C;&#x904E;&#x306E;&#x5EA6;&#x306B;&#x95A2;&#x6570;&#x304C;&#x547C;&#x3073;&#x51FA;&#x3055;&#x308C;&#x308B;</h2><p>&#x5F15;&#x6570;&#x306E;&#x6307;&#x5B9A;&#x65B9;&#x6CD5;&#x306F; <code>setTimeout</code> &#x3068;&#x540C;&#x69D8;&#x3067;&#x3059;&#x3002;</p><pre><code class="lang-JavaScript"><span class="hljs-comment">// 5&#x79D2;&#x9593;&#x9694;&#x3067;&#x5B9F;&#x884C;</span>
-<span class="hljs-keyword">var</span> timerId = setInterval(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-  <span class="hljs-comment">// &#x51E6;&#x7406;&#x3092;&#x8A18;&#x8FF0;...</span>
-}, <span class="hljs-number">5000</span>);
+<span class="hljs-comment">// HTTP &#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3001;URL &#x3092;&#x6307;&#x5B9A;</span>
+request.open(<span class="hljs-string">&apos;GET&apos;</span>, <span class="hljs-string">&apos;data.csv&apos;</span>);
 
-<span class="hljs-comment">// &#x5B9F;&#x884C;&#x3092;&#x30AD;&#x30E3;&#x30F3;&#x30BB;&#x30EB;</span>
-clearInterval(timerId);</code></pre>
+<span class="hljs-comment">// GET &#x306F;&#x30EA;&#x30AF;&#x30A8;&#x30B9;&#x30C8;&#x30DC;&#x30C7;&#x30A3;&#x304C;&#x7121;&#x3044;&#x305F;&#x3081; null &#x3092;&#x6307;&#x5B9A;</span>
+request.send(<span class="hljs-literal">null</span>);</code></pre>
+<h2 id="post-&#x30EA;&#x30AF;&#x30A8;&#x30B9;&#x30C8;">POST &#x30EA;&#x30AF;&#x30A8;&#x30B9;&#x30C8;</h2><p>POST &#x30EA;&#x30AF;&#x30A8;&#x30B9;&#x30C8;&#x306E;&#x5834;&#x5408;&#x3001;&#x30EA;&#x30AF;&#x30A8;&#x30B9;&#x30C8;&#x30D1;&#x30E9;&#x30E1;&#x30FC;&#x30BF;&#x3092; <code>application/x-www-form-urlencoded</code> &#x5F62;&#x5F0F;&#x3067;&#x30A8;&#x30F3;&#x30B3;&#x30FC;&#x30C9;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</p><p>&#x30A8;&#x30F3;&#x30B3;&#x30FC;&#x30C9;&#x306B;&#x306F; <code>encodeURIComponent</code> &#x95A2;&#x6570;&#x3092;&#x5229;&#x7528;&#x3057;&#x307E;&#x3059;&#x3002;</p><pre><code class="lang-javascript"><span class="hljs-comment">// &#x30A8;&#x30F3;&#x30B3;&#x30FC;&#x30C9;&#x51E6;&#x7406;&#x3092;&#x884C;&#x3046;&#x95A2;&#x6570;&#x3092;&#x5B9A;&#x7FA9;</span>
+<span class="hljs-keyword">var</span> encodeFormData = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+  <span class="hljs-keyword">if</span> (!data) <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;&apos;</span>;
+  <span class="hljs-keyword">var</span> params = [];
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> name <span class="hljs-keyword">in</span> data) {
+    <span class="hljs-keyword">var</span> key = <span class="hljs-built_in">encodeURIComponent</span>(name.replace(<span class="hljs-string">&apos; &apos;</span>, <span class="hljs-string">&apos;+&apos;</span>));
+    <span class="hljs-keyword">var</span> value = <span class="hljs-built_in">encodeURIComponent</span>(data[name].toString().replace(<span class="hljs-string">&apos; &apos;</span>, <span class="hljs-string">&apos;+&apos;</span>));
+    params.push(key + <span class="hljs-string">&apos;=&apos;</span> + value);
+  }
+  <span class="hljs-built_in">console</span>.log(params.join(<span class="hljs-string">&apos;&amp;&apos;</span>));
+  <span class="hljs-keyword">return</span> params.join(<span class="hljs-string">&apos;&amp;&apos;</span>);
+}
+
+<span class="hljs-keyword">var</span> request = <span class="hljs-keyword">new</span> XMLHttpRequest();
+
+<span class="hljs-comment">// HTTP &#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3001;URL &#x3092;&#x6307;&#x5B9A;</span>
+request.open(<span class="hljs-string">&apos;POST&apos;</span>, <span class="hljs-string">&apos;login.php&apos;</span>);
+
+<span class="hljs-comment">// &#x30EA;&#x30AF;&#x30A8;&#x30B9;&#x30C8;&#x30D8;&#x30C3;&#x30C0; Content-Type &#x3092;&#x6307;&#x5B9A;</span>
+request.setRequestHeader(<span class="hljs-string">&apos;Content-Type&apos;</span>, <span class="hljs-string">&apos;application/x-www-form-urlencoded&apos;</span>);
+
+<span class="hljs-comment">// &#x30A8;&#x30F3;&#x30B3;&#x30FC;&#x30C9;&#x3057;&#x305F;&#x6587;&#x5B57;&#x5217;&#x3092; send &#x306B;&#x6307;&#x5B9A;</span>
+request.send(encodeFormData({name: <span class="hljs-string">&apos;foo&apos;</span>}));</code></pre>
+<h2 id="&#x30EC;&#x30B9;&#x30DD;&#x30F3;&#x30B9;&#x306E;&#x30CF;&#x30F3;&#x30C9;&#x30EA;&#x30F3;&#x30B0;">&#x30EC;&#x30B9;&#x30DD;&#x30F3;&#x30B9;&#x306E;&#x30CF;&#x30F3;&#x30C9;&#x30EA;&#x30F3;&#x30B0;</h2><p><code>send</code> &#x3059;&#x308B;&#x524D;&#x306B; <code>onreadystatechange</code> &#x306B;&#x30A4;&#x30D9;&#x30F3;&#x30C8;&#x30CF;&#x30F3;&#x30C9;&#x30E9;&#x3092;&#x767B;&#x9332;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x3001;HTTP &#x30EC;&#x30B9;&#x30DD;&#x30F3;&#x30B9;&#x3092;&#x30CF;&#x30F3;&#x30C9;&#x30EA;&#x30F3;&#x30B0;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;
+readyState &#x306E;&#x5024;&#x306B;&#x3088;&#x3063;&#x3066;&#x3001;HTTP &#x30EA;&#x30AF;&#x30A8;&#x30B9;&#x30C8;&#x306E;&#x72B6;&#x614B;&#x3092;&#x691C;&#x77E5;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p><pre><code class="lang-javascript"><span class="hljs-keyword">var</span> request = <span class="hljs-keyword">new</span> XMLHttpRequest();
+request.open(<span class="hljs-string">&apos;GET&apos;</span>, <span class="hljs-string">&apos;data.csv&apos;</span>);
+
+request.onreadystatechange = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// &#x30EA;&#x30AF;&#x30A8;&#x30B9;&#x30C8;&#x304C;&#x5B8C;&#x4E86;&#x3057;&#x3001;HTTP &#x30B9;&#x30C6;&#x30FC;&#x30BF;&#x30B9;&#x30B3;&#x30FC;&#x30C9;&#x304C; 200 &#x306E;&#x5834;&#x5408;</span>
+  <span class="hljs-keyword">if</span> (request.readyState === <span class="hljs-number">4</span> &amp;&amp; request.status === <span class="hljs-number">200</span>) {
+    <span class="hljs-built_in">console</span>.log(request.responseText);
+  }
+}</code></pre>
+<table>
+<thead>
+<tr><th>readyState&#x5024;</th>
+<th>&#x8AAC;&#x660E;</th>
+</tr></thead><tbody>
+<tr><td>0</td>
+<td>open &#x304C;&#x547C;&#x3073;&#x51FA;&#x3055;&#x308C;&#x3066;&#x3044;&#x306A;&#x3044;</td>
+</tr><tr><td>1</td>
+<td>open &#x304C;&#x547C;&#x3073;&#x51FA;&#x3055;&#x308C;&#x305F;</td>
+</tr><tr><td>2</td>
+<td>&#x30D8;&#x30C3;&#x30C0;&#x3092;&#x53D7;&#x3051;&#x53D6;&#x3063;&#x305F;</td>
+</tr><tr><td>3</td>
+<td>&#x30EC;&#x30B9;&#x30DD;&#x30F3;&#x30B9;&#x30DC;&#x30C7;&#x30A3;&#x3092;&#x53D7;&#x4FE1;&#x4E2D;</td>
+</tr><tr><td>4</td>
+<td>&#x30EC;&#x30B9;&#x30DD;&#x30F3;&#x30B9;&#x306E;&#x53D7;&#x4FE1;&#x304C;&#x5B8C;&#x4E86;&#x3057;&#x305F;</td>
+</tr></tbody></table>
+
 
                                 
                                 </section>
@@ -473,12 +516,12 @@ clearInterval(timerId);</code></pre>
 
             
                 
-                <a href="03_dialog.html" class="navigation navigation-prev " aria-label="Previous page: ダイアログ">
+                <a href="06_event.html" class="navigation navigation-prev " aria-label="Previous page: イベント">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="05_dom.html" class="navigation navigation-next " aria-label="Next page: DOM">
+                <a href="08_html5.html" class="navigation navigation-next " aria-label="Next page: HTML5 API">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -489,7 +532,7 @@ clearInterval(timerId);</code></pre>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"タイマー","level":"1.3.4","depth":2,"next":{"title":"DOM","level":"1.3.5","depth":2,"path":"clientside/05_dom.md","ref":"clientside/05_dom.md","articles":[]},"previous":{"title":"ダイアログ","level":"1.3.3","depth":2,"path":"clientside/03_dialog.md","ref":"clientside/03_dialog.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"clientside/04_timer.md","mtime":"2016-08-30T02:03:30.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-08-31T02:29:04.376Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"XMLHttpRequest","level":"1.3.7","depth":2,"next":{"title":"HTML5 API","level":"1.3.8","depth":2,"path":"clientside/08_html5.md","ref":"clientside/08_html5.md","articles":[]},"previous":{"title":"イベント","level":"1.3.6","depth":2,"path":"clientside/06_event.md","ref":"clientside/06_event.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"clientside/07_xml_http_request.md","mtime":"2016-08-30T03:07:10.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-08-31T02:29:04.376Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -32,7 +32,8 @@ var array = [1, 2, 3, 4, 5];
 console.log(array.length);
 ```
 
-配列の要素を巡回する場合は、`forEach` メソッドを使用します。
+配列の要素を巡回する場合は、`forEach` メソッドを使用します。  
+引数には各要素に適用する関数を指定します。
 
 ```javascript
 var array = [1, 2, 3, 4, 5];
@@ -90,6 +91,12 @@ console.log(array);
 ```
 
 ## 主要なメソッド
+
+ここでは利用頻度の高いメソッドを紹介します。  
+この他のメソッドについては以下の URL を参考にしてください。
+
+
+- [Array](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array)
 
 ### join
 

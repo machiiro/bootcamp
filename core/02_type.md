@@ -130,10 +130,13 @@ JavaScript では、if 文の条件式のような論理値が必要な場面な
 特に値から論理値へ変換する動きは抑えておきましょう。
 
 ```javascript
-var num = 1 + "";
+var num = 2 * "3";
+console.log(num);
 
 if ("") {
-  // 実行される？
+  console.log('true');
+} else {
+  console.log('false');
 }
 ```
 

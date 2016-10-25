@@ -70,7 +70,7 @@ jQuery プラグインのようなライブラリで利用されます。
 hello('tanaka'); // ReferenceError: hello is not defined
 ```
 
-## 変数のホスティング (巻き上げ)
+## 変数のホイスティング (巻き上げ)
 
 JavaScript では、関数内で宣言される変数はスコープ内で宣言前に参照することが可能です。値は `undefined` となります。
 このような動きをホスティングと呼びます。

@@ -1,0 +1,306 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>RSpec とは · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="02_getting_started.html" />
+    
+    
+    <link rel="prev" href="../" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="01_about.html">
+            
+                <a href="01_about.html">
+            
+                    
+                    RSpec とは
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="02_getting_started.html">
+            
+                <a href="02_getting_started.html">
+            
+                    
+                    RSpec を書いてみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="03_grouping.html">
+            
+                <a href="03_grouping.html">
+            
+                    
+                    テストコードのグルーピング
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="04_matcher.html">
+            
+                <a href="04_matcher.html">
+            
+                    
+                    マッチャ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >RSpec とは</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="rspec-&#x3068;&#x306F;">RSpec &#x3068;&#x306F;</h1><h2 id="rspec-&#x3068;&#x306F;">RSpec &#x3068;&#x306F;</h2><p>RSpec &#x3068;&#x306F;&#x3001;Ruby &#x306B;&#x304A;&#x3051;&#x308B; BDD (behavior driven development&#x3001;&#x30D3;&#x30D8;&#x30A4;&#x30D3;&#x30A2;&#x99C6;&#x52D5;&#x958B;&#x767A;) &#x306E;&#x305F;&#x3081;&#x306E;&#x30C6;&#x30B9;&#x30C8;&#x30D5;&#x30EC;&#x30FC;&#x30E0;&#x30EF;&#x30FC;&#x30AF;&#x3067;&#x3059;&#x3002;
+BDD &#x3068;&#x3044;&#x3046;&#x8A00;&#x8449;&#x306B;&#x805E;&#x304D;&#x6163;&#x308C;&#x306A;&#x3044;&#x304B;&#x3082;&#x3057;&#x308C;&#x307E;&#x305B;&#x3093;&#x304C;&#x3001;
+&#x30C6;&#x30B9;&#x30C8;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x3001;&#x81EA;&#x7136;&#x8A00;&#x8A9E;&#x3092;&#x7528;&#x3044;&#x3066;&#x8981;&#x6C42;&#x4ED5;&#x69D8;&#x306E;&#x3088;&#x3046;&#x306B; (<code>Spec = &#x4ED5;&#x69D8;</code>) &#x8A18;&#x8FF0;&#x3059;&#x308B;&#x305F;&#x3081;&#x306E;&#x624B;&#x6CD5;&#x3067;&#x3059;&#x3002;</p><h2 id="&#x30C6;&#x30B9;&#x30C8;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x66F8;&#x304F;&#x610F;&#x7FA9;">&#x30C6;&#x30B9;&#x30C8;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x66F8;&#x304F;&#x610F;&#x7FA9;</h2><ul><li>&#x5168;&#x4F53;&#x306E;&#x30C6;&#x30B9;&#x30C8;&#x5DE5;&#x6570;&#x524A;&#x6E1B;
+</li>
+<li>&#x30C6;&#x30B9;&#x30C8;&#x5BFE;&#x8C61;&#x30B3;&#x30FC;&#x30C9;&#x306E;&#x54C1;&#x8CEA;&#x5411;&#x4E0A;
+</li>
+<li>&#x30C6;&#x30B9;&#x30C8;&#x5BFE;&#x8C61;&#x30B3;&#x30FC;&#x30C9;&#x306E;&#x7C92;&#x5EA6;&#x306E;&#x898B;&#x76F4;&#x3057;
+</li>
+<li>&#x5F8C;&#x3005;&#x30EA;&#x30D5;&#x30A1;&#x30AF;&#x30BF;&#x30EA;&#x30F3;&#x30B0;&#x3057;&#x3084;&#x3059;&#x304F;&#x306A;&#x308B;
+</li>
+<li>Ruby &#x306E;&#x3088;&#x3046;&#x306A;&#x52D5;&#x7684;&#x578B;&#x4ED8;&#x3051;&#x8A00;&#x8A9E;&#x306E;&#x5834;&#x5408;&#x3001;&#x3061;&#x3087;&#x3063;&#x3068;&#x3057;&#x305F;&#x30DF;&#x30B9;&#x304C;&#x5B9F;&#x884C;&#x6642;&#x4F8B;&#x5916;&#x3092;&#x751F;&#x3080;&#x305F;&#x3081;&#x3001;&#x57FA;&#x672C;&#x7684;&#x306A;&#x30D1;&#x30B9;&#x3092;&#x901A;&#x3059;&#x30C6;&#x30B9;&#x30C8;&#x304C;&#x5FC5;&#x8981;
+</li></ul>
+<h2 id="&#x30C6;&#x30B9;&#x30C8;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x66F8;&#x304F;&#x306B;&#x3042;&#x305F;&#x3063;&#x3066;&#x610F;&#x8B58;&#x3059;&#x308B;&#x3053;&#x3068;">&#x30C6;&#x30B9;&#x30C8;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x66F8;&#x304F;&#x306B;&#x3042;&#x305F;&#x3063;&#x3066;&#x610F;&#x8B58;&#x3059;&#x308B;&#x3053;&#x3068;</h2><ul><li><p>&#x30C6;&#x30B9;&#x30C8;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x306A;&#x308B;&#x3079;&#x304F;&#x7C21;&#x5358;&#x306B;&#x304B;&#x3051;&#x308B;&#x3088;&#x3046;&#x306B;&#x5DE5;&#x592B;&#x3059;&#x308B;</p><ul><li>&#x30C6;&#x30B9;&#x30C8;&#x5B9F;&#x884C;&#x306B;&#x5FC5;&#x8981;&#x306A;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x6E96;&#x5099;&#x3059;&#x308B;&#x51E6;&#x7406;&#x3092;&#x307E;&#x3068;&#x3081;&#x308B;&#x3001;&#x7B49;
+</li>
+<li>DRY &#x306F;&#x3053;&#x3053;&#x3067;&#x3082;&#x6D3B;&#x304B;&#x3059;
+</li>
+<li>&#x305F;&#x3060;&#x3057;&#x3001;&#x5FC5;&#x8981;&#x4EE5;&#x4E0A;&#x306B;&#x30AD;&#x30EC;&#x30A4;&#x306B;&#x66F8;&#x304F;&#x5FC5;&#x8981;&#x306F;&#x3042;&#x308A;&#x307E;&#x305B;&#x3093;
+</li></ul>
+</li>
+<li><p>&#x30C6;&#x30B9;&#x30C8;&#x5BFE;&#x8C61;&#x30B3;&#x30FC;&#x30C9;&#x306E;&#x8CAC;&#x52D9;&#x3092;&#x610F;&#x8B58;&#x3059;&#x308B;</p><ul><li>&#x672C;&#x6765;&#x30C6;&#x30B9;&#x30C8;&#x3057;&#x305F;&#x3044;&#x3053;&#x3068;&#x3068;&#x95A2;&#x4FC2;&#x306E;&#x306A;&#x3044;&#x30C7;&#x30FC;&#x30BF;&#x3092;&#x30BB;&#x30C3;&#x30C8;&#x30A2;&#x30C3;&#x30D7;&#x3057;&#x306A;&#x3044;&#x3068;&#x30C6;&#x30B9;&#x30C8;&#x304C;&#x901A;&#x305B;&#x306A;&#x3044;&#x5834;&#x5408;&#x3001;&#x30B3;&#x30FC;&#x30C9;&#x306E;&#x8CAC;&#x52D9;&#x304C;&#x9593;&#x9055;&#x3063;&#x3066;&#x3044;&#x308B;&#x53EF;&#x80FD;&#x6027;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;
+</li>
+<li>&#x30C6;&#x30B9;&#x30C8;&#x5BFE;&#x8C61;&#x30B3;&#x30FC;&#x30C9;&#x306E;&#x8CAC;&#x52D9;&#x4EE5;&#x5916;&#x306E;&#x7B87;&#x6240;&#x306B;&#x3064;&#x3044;&#x3066;&#x306F;&#x30E2;&#x30C3;&#x30AF;/&#x30B9;&#x30BF;&#x30D6;&#x3092;&#x5229;&#x7528;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;
+</li></ul>
+</li>
+<li><p>&#x30E1;&#x30F3;&#x30C6;&#x3067;&#x304D;&#x306A;&#x304F;&#x306A;&#x3063;&#x305F;&#x3089;&#x6700;&#x60AA;&#x6368;&#x3066;&#x308B;&#x3053;&#x3068;&#x3082;&#x60F3;&#x5B9A;&#x3057;&#x3066;&#x3001;&#x3068;&#x308A;&#x3042;&#x3048;&#x305A;&#x30C6;&#x30B9;&#x30C8;&#x3092;&#x7A4D;&#x3093;&#x3067;&#x3044;&#x304D;&#x307E;&#x3057;&#x3087;&#x3046;</p></li></ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="02_getting_started.html" class="navigation navigation-next " aria-label="Next page: RSpec を書いてみる">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"RSpec とは","level":"1.2","depth":1,"next":{"title":"RSpec を書いてみる","level":"1.3","depth":1,"path":"base/02_getting_started.md","ref":"base/02_getting_started.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"base/01_about.md","mtime":"2016-10-26T04:38:00.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-10-26T04:40:15.459Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

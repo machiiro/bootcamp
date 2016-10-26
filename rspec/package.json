@@ -1,0 +1,13 @@
+{
+  "name": "bootcamp-rspec",
+  "version": "1.0.0",
+  "scripts": {
+    "gitbook": "gitbook",
+    "serve": "gitbook serve",
+    "build": "gitbook build ./ ../docs/rspec/"
+  },
+  "author": "machiiro Inc.",
+  "dependencies": {
+    "gitbook-cli": "^2.3.0"
+  }
+}

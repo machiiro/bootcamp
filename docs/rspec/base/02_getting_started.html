@@ -1,0 +1,308 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>RSpec を書いてみる · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="03_grouping.html" />
+    
+    
+    <link rel="prev" href="01_about.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="01_about.html">
+            
+                <a href="01_about.html">
+            
+                    
+                    RSpec とは
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="02_getting_started.html">
+            
+                <a href="02_getting_started.html">
+            
+                    
+                    RSpec を書いてみる
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="03_grouping.html">
+            
+                <a href="03_grouping.html">
+            
+                    
+                    テストコードのグルーピング
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="04_matcher.html">
+            
+                <a href="04_matcher.html">
+            
+                    
+                    マッチャ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >RSpec を書いてみる</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="rspec-&#x3092;&#x66F8;&#x3044;&#x3066;&#x307F;&#x308B;">RSpec &#x3092;&#x66F8;&#x3044;&#x3066;&#x307F;&#x308B;</h1><p>&#x307E;&#x305A;&#x306F;&#x6700;&#x5C0F;&#x9650;&#x306E; RSpec &#x306E;&#x69CB;&#x6210;&#x3092;&#x4F5C;&#x3063;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p><h2 id="&#x4F5C;&#x696D;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;-rspec-sample-&#x3092;&#x4F5C;&#x6210;&#x3059;&#x308B;">&#x4F5C;&#x696D;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA; <code>rspec-sample</code> &#x3092;&#x4F5C;&#x6210;&#x3059;&#x308B;</h2><p>&#x3064;&#x3044;&#x3067;&#x306B;&#x30C6;&#x30B9;&#x30C8;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x914D;&#x7F6E;&#x3059;&#x308B; <code>spec</code> &#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3082;&#x4F5C;&#x3063;&#x3066;&#x304A;&#x304D;&#x307E;&#x3059;&#x3002;</p><pre><code class="lang-bash">$ mkdir -p path-to-path/rspec-sample/spec
+$ <span class="hljs-built_in">cd</span> path-to-path/rspec-sample</code></pre>
+<h2 id="rakefile-&#x3092;&#x4F5C;&#x6210;&#x3059;&#x308B;">Rakefile &#x3092;&#x4F5C;&#x6210;&#x3059;&#x308B;</h2><p>RSpec &#x306F; <code>rake</code> &#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x7528;&#x3044;&#x3066;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x305F;&#x3081;&#x3001;Rakefile &#x3068;&#x3044;&#x3046; rake &#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x7528;&#x306E;&#x30BF;&#x30B9;&#x30AF;&#x5B9A;&#x7FA9;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x307E;&#x3059;&#x3002;</p><pre><code class="lang-Rakefile">require &quot;rspec/core/rake_task&quot;
+
+RSpec::Core::RakeTask.new(&quot;spec&quot;)
+task :default =&gt; :spec</code></pre>
+<h2 id="spechelperrb-&#x3092;&#x4F5C;&#x6210;&#x3059;&#x308B;">spec_helper.rb &#x3092;&#x4F5C;&#x6210;&#x3059;&#x308B;</h2><p>&#x4EE5;&#x4E0B;&#x306E;&#x5185;&#x5BB9;&#x3067; <code>spec_helper.rb</code> &#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x3053;&#x3053;&#x306B;&#x306F;&#x30C6;&#x30B9;&#x30C8;&#x5171;&#x901A;&#x306E;&#x8A2D;&#x5B9A;&#x3001;&#x5B9F;&#x88C5;&#x3092;&#x8A18;&#x8FF0;&#x3057;&#x307E;&#x3059;&#x3002;</p><p>&#x3061;&#x306A;&#x307F;&#x306B; <code>spec</code> &#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3001;&#x304A;&#x3088;&#x3073; <code>spec_helper.rb</code> &#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306F; RSpec &#x306E;&#x304A;&#x7D04;&#x675F;&#x3067;&#x3059;&#x3002;</p><pre><code class="lang-spec/spec_helper.rb">require &apos;rspec&apos;
+
+RSpec.configure do |config|
+end</code></pre>
+<h2 id="&#x30C6;&#x30B9;&#x30C8;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x4F5C;&#x6210;&#x3059;&#x308B;">&#x30C6;&#x30B9;&#x30C8;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x4F5C;&#x6210;&#x3059;&#x308B;</h2><p>&#x52D5;&#x4F5C;&#x78BA;&#x8A8D;&#x306E;&#x305F;&#x3081;&#x3001;&#x4EE5;&#x4E0B;&#x306E;&#x5185;&#x5BB9;&#x3067;&#x30C6;&#x30B9;&#x30C8;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x540D;&#x306B;&#x306F;&#x5FC5;&#x305A; <code>_spec</code> &#x3092;&#x542B;&#x3081;&#x308B;&#x3001;<code>spec_helper</code> &#x3092; <code>require</code> &#x3059;&#x308B;&#x306E;&#x3082; RSpec &#x306E;&#x304A;&#x7D04;&#x675F;&#x3067;&#x3059;&#x3002;</p><pre><code class="lang-spec/app_spec.rb">require &apos;spec_helper&apos;
+
+describe &apos;app_spec&apos; do
+  it {
+    expect(1).to eq(1)
+  }
+end</code></pre>
+<h2 id="rspec-&#x3092;&#x5B9F;&#x884C;&#x3059;&#x308B;">RSpec &#x3092;&#x5B9F;&#x884C;&#x3059;&#x308B;</h2><p><code>rake spec</code> &#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x307E;&#x3059;&#x3002;
+<code>1 example, 0 failures</code> &#x3068;&#x8868;&#x793A;&#x3055;&#x308C;&#x308C;&#x3070;&#x6210;&#x529F;&#x3067;&#x3059;&#x3002;</p><pre><code class="lang-bash">$ rake spec
+.
+
+Finished <span class="hljs-keyword">in</span> 0.00244 seconds (files took 0.27435 seconds to load)
+1 example, 0 failures</code></pre>
+<h2 id="padrino-&#x3067;-rspec-&#x3092;&#x66F8;&#x304F;">Padrino &#x3067; RSpec &#x3092;&#x66F8;&#x304F;</h2><p>&#x5B9F;&#x969B;&#x306E;&#x30C6;&#x30B9;&#x30C8;&#x30B3;&#x30FC;&#x30C9;&#x3067;&#x306F;&#x3001;DB &#x306B;&#x63A5;&#x7D9A;&#x3057;&#x305F;&#x308A;&#x4F9D;&#x5B58;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x3092;&#x8AAD;&#x307F;&#x3053;&#x3093;&#x3060;&#x308A;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;
+&#x307E;&#x3061;&#x3044;&#x308D;&#x3067;&#x63A1;&#x7528;&#x3057;&#x3066;&#x3044;&#x308B;&#x30D5;&#x30EC;&#x30FC;&#x30E0;&#x30EF;&#x30FC;&#x30AF; Padrino &#x3067;&#x306F;&#x3001;&#x305D;&#x306E;&#x8FBA;&#x308A;&#x306E;&#x51E6;&#x7406;&#x304C;&#x4E8B;&#x524D;&#x306B;&#x884C;&#x308F;&#x308C;&#x305F;&#x72B6;&#x614B;&#x3067;&#x5B9F;&#x884C;&#x3055;&#x308C;&#x308B;&#x305F;&#x3081;&#x3001;
+&#x57FA;&#x672C;&#x7684;&#x306B;&#x306F;&#x4E0A;&#x8A18;&#x306E;&#x901A;&#x308A; <code>spec</code> &#x306B;&#x30C6;&#x30B9;&#x30C8;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x914D;&#x7F6E;&#x3057;&#x3066;&#x3044;&#x304F;&#x3060;&#x3051;&#x3067;&#x30C6;&#x30B9;&#x30C8;&#x304C;&#x5B9F;&#x884C;&#x53EF;&#x80FD;&#x3067;&#x3059;&#x3002;</p>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="01_about.html" class="navigation navigation-prev " aria-label="Previous page: RSpec とは">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="03_grouping.html" class="navigation navigation-next " aria-label="Next page: テストコードのグルーピング">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"RSpec を書いてみる","level":"1.3","depth":1,"next":{"title":"テストコードのグルーピング","level":"1.4","depth":1,"path":"base/03_grouping.md","ref":"base/03_grouping.md","articles":[]},"previous":{"title":"RSpec とは","level":"1.2","depth":1,"path":"base/01_about.md","ref":"base/01_about.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"base/02_getting_started.md","mtime":"2016-10-26T04:37:17.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-10-26T04:40:15.459Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

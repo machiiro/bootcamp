@@ -1,0 +1,13 @@
+{
+  "name": "bootcamp-play1",
+  "version": "1.0.0",
+  "scripts": {
+    "gitbook": "gitbook",
+    "serve": "gitbook serve",
+    "build": "gitbook build ./ ../docs/play1/"
+  },
+  "author": "machiiro Inc.",
+  "dependencies": {
+    "gitbook-cli": "^2.3.0"
+  }
+}

@@ -1,0 +1,488 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>コントローラ · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="07_template.html" />
+    
+    
+    <link rel="prev" href="05_app_config.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="01_about.html">
+            
+                <a href="01_about.html">
+            
+                    
+                    Play! とは
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="02_getting_started.html">
+            
+                <a href="02_getting_started.html">
+            
+                    
+                    インストール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="03_gen_app.html">
+            
+                <a href="03_gen_app.html">
+            
+                    
+                    アプリケーションを作成する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="04_add_page.html">
+            
+                <a href="04_add_page.html">
+            
+                    
+                    アプリケーションにページを追加する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="05_app_config.html">
+            
+                <a href="05_app_config.html">
+            
+                    
+                    アプリケーション設定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7" data-path="06_controller.html">
+            
+                <a href="06_controller.html">
+            
+                    
+                    コントローラ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="07_template.html">
+            
+                <a href="07_template.html">
+            
+                    
+                    テンプレート
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="08_model.html">
+            
+                <a href="08_model.html">
+            
+                    
+                    モデル
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="09_add_register_page.html">
+            
+                <a href="09_add_register_page.html">
+            
+                    
+                    登録画面を追加する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="10_job.html">
+            
+                <a href="10_job.html">
+            
+                    
+                    ジョブ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="11_cache.html">
+            
+                <a href="11_cache.html">
+            
+                    
+                    キャッシュ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="12_dependencies.html">
+            
+                <a href="12_dependencies.html">
+            
+                    
+                    依存性管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >コントローラ</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;">&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;</h1><h2 id="&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x30AF;&#x30E9;&#x30B9;&#x306E;&#x8981;&#x4EF6;">&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x30AF;&#x30E9;&#x30B9;&#x306E;&#x8981;&#x4EF6;</h2><p>Play! &#x306B;&#x304A;&#x3051;&#x308B;&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x306F;&#x4EE5;&#x4E0B;&#x306E;&#x8981;&#x4EF6;&#x3092;&#x6E80;&#x305F;&#x3059;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</p><ul><li><code>controllers</code> &#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x914D;&#x4E0B;&#x306B;&#x30AF;&#x30E9;&#x30B9;&#x304C;&#x5B58;&#x5728;&#x3059;&#x308B;
+</li>
+<li><code>play.mvc.Controller</code> &#x3092;&#x7D99;&#x627F;&#x3059;&#x308B;
+</li></ul>
+<h2 id="http-&#x30EA;&#x30AF;&#x30A8;&#x30B9;&#x30C8;&#x30D1;&#x30E9;&#x30E1;&#x30FC;&#x30BF;&#x306E;&#x53D6;&#x5F97;">HTTP &#x30EA;&#x30AF;&#x30A8;&#x30B9;&#x30C8;&#x30D1;&#x30E9;&#x30E1;&#x30FC;&#x30BF;&#x306E;&#x53D6;&#x5F97;</h2><p>Play! &#x3067;&#x306F;&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x5074;&#x3067; HTTP &#x30EA;&#x30AF;&#x30A8;&#x30B9;&#x30C8;&#x30D1;&#x30E9;&#x30E1;&#x30FC;&#x30BF;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;&#x65B9;&#x6CD5;&#x3068;&#x3057;&#x3066;&#x3001;&#x5927;&#x304D;&#x304F;2&#x3064;&#x306E;&#x65B9;&#x6CD5;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</p><h3 id="request-&#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x304B;&#x3089;&#x751F;&#x306E;&#x30D1;&#x30E9;&#x30E1;&#x30FC;&#x30BF;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;">Request &#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x304B;&#x3089;&#x751F;&#x306E;&#x30D1;&#x30E9;&#x30E1;&#x30FC;&#x30BF;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;</h3><p>Controller &#x304B;&#x3089;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x53EF;&#x80FD;&#x306A; <code>request</code> &#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x304B;&#x3089;&#x53D6;&#x5F97;&#x53EF;&#x80FD;&#x3067;&#x3059;&#x3002;</p><pre><code class="lang-java">Map&lt;String, String[]&gt; allParams = request.params.all();
+Map&lt;String, String&gt; allSimpleParams = request.params.allSimple();</code></pre>
+<h3 id="&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x306E;&#x5F15;&#x6570;&#x3068;&#x7D10;&#x4ED8;&#x3051;&#x308B;">&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x306E;&#x5F15;&#x6570;&#x3068;&#x7D10;&#x4ED8;&#x3051;&#x308B;</h3><p>&#x4F8B;&#x3048;&#x3070; Play! &#x3067;&#x306F;&#x4EE5;&#x4E0B;&#x306E;&#x3088;&#x3046;&#x306B;&#x8A18;&#x8FF0;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x53EF;&#x80FD;&#x3067;&#x3059;&#x3002;
+&#x5F15;&#x6570;&#x306E;&#x5909;&#x6570;&#x540D;&#x306F;&#x305D;&#x306E;&#x307E;&#x307E;&#x30EA;&#x30AF;&#x30A8;&#x30B9;&#x30C8;&#x30D1;&#x30E9;&#x30E1;&#x30FC;&#x30BF;&#x306E;&#x540D;&#x79F0;&#x3068;&#x3057;&#x3066;&#x4F7F;&#x7528;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p><pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">someMethod</span><span class="hljs-params">(String name, String email)</span> </span>{
+    User user = <span class="hljs-keyword">new</span> User();
+    user.name = name;
+    user.email = email;
+    renderJSON(user);
+}</code></pre>
+<p>&#x3053;&#x306E;&#x5834;&#x5408;&#x3001;&#x4EE5;&#x4E0B;&#x306E; URL &#x3067;&#x30EA;&#x30AF;&#x30A8;&#x30B9;&#x30C8;&#x30D1;&#x30E9;&#x30E1;&#x30FC;&#x30BF;&#x3092;&#x6E21;&#x3059;&#x3053;&#x3068;&#x304C;&#x51FA;&#x6765;&#x307E;&#x3059;&#x3002;
+<a href="http://localhost:9000/someMethod?name=yamada&amp;email=yamada@machiiro.jp" target="_blank">http://localhost:9000/someMethod?name=yamada&amp;email=yamada@machiiro.jp</a></p><p>&#x5F15;&#x6570;&#x306B;&#x306F;&#x30AF;&#x30E9;&#x30B9;&#x3092;&#x6307;&#x5B9A;&#x3059;&#x308B;&#x3053;&#x3068;&#x3082;&#x53EF;&#x80FD;&#x3067;&#x3059;&#x3002;</p><pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">someMethod</span><span class="hljs-params">(User user)</span> </span>{
+    renderJSON(user);
+}</code></pre>
+<p>&#x3053;&#x306E;&#x5834;&#x5408;&#x3001;&#x30EA;&#x30AF;&#x30A8;&#x30B9;&#x30C8;&#x30D1;&#x30E9;&#x30E1;&#x30FC;&#x30BF;&#x306E;&#x540D;&#x524D;&#x306B; <code>user.</code> &#x30D7;&#x30EC;&#x30D5;&#x30A3;&#x30C3;&#x30AF;&#x30B9;&#x3092;&#x4ED8;&#x3051;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;
+<a href="http://localhost:9000/someMethod?user.name=yamada&amp;user.email=yamada@machiiro.jp" target="_blank">http://localhost:9000/someMethod?user.name=yamada&amp;user.email=yamada@machiiro.jp</a></p><h2 id="&#x30EC;&#x30F3;&#x30C0;&#x30EA;&#x30F3;&#x30B0;">&#x30EC;&#x30F3;&#x30C0;&#x30EA;&#x30F3;&#x30B0;</h2><p>&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x306F; HTTP &#x30EC;&#x30B9;&#x30DD;&#x30F3;&#x30B9;&#x3068;&#x3057;&#x3066;&#x4F55;&#x3089;&#x304B;&#x306E;&#x7D50;&#x679C;&#x3092;&#x8FD4;&#x3059;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</p><p>&#x30C6;&#x30F3;&#x30D7;&#x30EC;&#x30FC;&#x30C8;&#x3092;&#x4ECB;&#x3057;&#x3066; HTML &#x3092;&#x8FD4;&#x3059;&#x5834;&#x5408;&#x3001;<code>render</code> &#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x3053;&#x306E;&#x6642;&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x30AF;&#x30E9;&#x30B9;&#x306E;&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x69CB;&#x6210;&#x306B;&#x5408;&#x308F;&#x305B;&#x3066;&#x81EA;&#x52D5;&#x7684;&#x306B; HTML &#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x304C;&#x9078;&#x629E;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;
+&#x4F8B;&#x3048;&#x3070;&#x3001;<code>controllers/Users/show</code> &#x3068;&#x3044;&#x3046;&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306E;&#x5834;&#x5408;&#x3001;<code>views/Users/show.html</code> &#x304C;&#x9078;&#x629E;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p><pre><code class="lang-java">render();</code></pre>
+<p>&#x4F7F;&#x7528;&#x3059;&#x308B;&#x30C6;&#x30F3;&#x30D7;&#x30EC;&#x30FC;&#x30C8;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x660E;&#x793A;&#x7684;&#x306B;&#x6307;&#x5B9A;&#x3059;&#x308B;&#x5834;&#x5408;&#x306F;&#x3001;<code>render</code> &#x306E;&#x7B2C;1&#x5F15;&#x6570;&#x306B; <code>@</code> &#x4ED8;&#x304D;&#x3067;&#x30D1;&#x30B9;&#x3092;&#x6307;&#x5B9A;&#x3057;&#x307E;&#x3059;&#x3002;</p><pre><code class="lang-java">render(<span class="hljs-string">&quot;@show_another_template&quot;</span>);</code></pre>
+<p>&#x30C6;&#x30F3;&#x30D7;&#x30EC;&#x30FC;&#x30C8;&#x306B;&#x5024;&#x3092;&#x6E21;&#x3057;&#x305F;&#x3044;&#x5834;&#x5408;&#x306F;&#x3001;render &#x306E;&#x5F15;&#x6570;&#x306B;&#x8FFD;&#x52A0;&#x3059;&#x308B;&#x304B;&#x3001;renderArgs &#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x5229;&#x7528;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x3053;&#x306E;&#x6642;&#x5B9A;&#x7FA9;&#x3057;&#x305F;&#x5909;&#x6570;&#x540D;&#x304C;&#x3001;&#x305D;&#x306E;&#x307E;&#x307E;&#x30C6;&#x30F3;&#x30D7;&#x30EC;&#x30FC;&#x30C8;&#x3067;&#x53C2;&#x7167;&#x53EF;&#x80FD;&#x306A;&#x5909;&#x6570;&#x306E;&#x540D;&#x79F0;&#x3068;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p><pre><code class="lang-java"><span class="hljs-comment">// renderArgs &#x3092;&#x4F7F;&#x3046;&#x30D1;&#x30BF;&#x30FC;&#x30F3;&#x3001;&#x30C6;&#x30F3;&#x30D7;&#x30EC;&#x30FC;&#x30C8;&#x5074;&#x3067;&#x306F; ${user2} &#x3067;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x53EF;&#x80FD;&#x3068;&#x306A;&#x308B;</span>
+renderArgs.put(<span class="hljs-string">&quot;user2&quot;</span>, <span class="hljs-keyword">new</span> User());
+
+<span class="hljs-comment">// render &#x306E;&#x5F15;&#x6570;&#x306B;&#x6307;&#x5B9A;&#x3059;&#x308B;&#x30D1;&#x30BF;&#x30FC;&#x30F3;&#x3001;&#x30C6;&#x30F3;&#x30D7;&#x30EC;&#x30FC;&#x30C8;&#x5074;&#x3067;&#x306F; ${user} &#x3067;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x53EF;&#x80FD;&#x3068;&#x306A;&#x308B;</span>
+User user = <span class="hljs-keyword">new</span> User();
+render(user);</code></pre>
+<p>&#x305D;&#x306E;&#x4ED6;&#x306E; render &#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306F;&#x4EE5;&#x4E0B;&#x306E;&#x901A;&#x308A;&#x3067;&#x3059;&#x3002;
+&#x5168;&#x3066; HTTP &#x30B9;&#x30C6;&#x30FC;&#x30BF;&#x30B9; 200 &#x3067;&#x8FD4;&#x3057;&#x307E;&#x3059;&#x3002;</p><table>
+<thead>
+<tr><th>&#x30E1;&#x30BD;&#x30C3;&#x30C9;</th>
+<th>&#x8AAC;&#x660E;</th>
+</tr></thead><tbody>
+<tr><td>renderText</td>
+<td>&#x5E73;&#x6587;&#x3092;&#x8FD4;&#x3059;</td>
+</tr><tr><td>renderHTML</td>
+<td>HTML&#x3092;&#x8FD4;&#x3059;</td>
+</tr><tr><td>renderXml</td>
+<td>XML &#x3092;&#x8FD4;&#x3059;</td>
+</tr><tr><td>renderJSON</td>
+<td>JSON&#x3092;&#x8FD4;&#x3059;&#x3001;RESTful API &#x7B49;&#x3067;&#x4F7F;&#x7528;</td>
+</tr><tr><td>renderBinary</td>
+<td>&#x30D0;&#x30A4;&#x30CA;&#x30EA;&#x3092;&#x8FD4;&#x3059;&#x3001;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x30C0;&#x30A6;&#x30F3;&#x30ED;&#x30FC;&#x30C9;&#x3067;&#x4F7F;&#x7528;</td>
+</tr></tbody></table>
+
+<p>&#x307E;&#x305F;&#x3001;&#x5404; HTTP &#x30B9;&#x30C6;&#x30FC;&#x30BF;&#x30B9;&#x30B3;&#x30FC;&#x30C9;&#x3067;&#x8FD4;&#x5374;&#x3059;&#x308B;&#x305F;&#x3081;&#x306E;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3082;&#x7528;&#x610F;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p><table>
+<thead>
+<tr><th>&#x30E1;&#x30BD;&#x30C3;&#x30C9;</th>
+<th>&#x8AAC;&#x660E;</th>
+</tr></thead><tbody>
+<tr><td>error</td>
+<td>HTTP 500 &#x3067;&#x8FD4;&#x3059;</td>
+</tr><tr><td>redirect</td>
+<td>HTTP 302 &#x3067;&#x8FD4;&#x3057;&#x3001;&#x6307;&#x5B9A;URL&#x306B;&#x30EA;&#x30C0;&#x30A4;&#x30EC;&#x30AF;&#x30C8;&#x3059;&#x308B;</td>
+</tr><tr><td>unauthorized</td>
+<td>HTTP 401 &#x3067;&#x8FD4;&#x3059;</td>
+</tr></tbody></table>
+
+<h2 id="&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306E;&#x30C1;&#x30A7;&#x30FC;&#x30F3;">&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x306E;&#x30C1;&#x30A7;&#x30FC;&#x30F3;</h2><p>&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x5185;&#x3067;&#x3001;&#x5225;&#x306E; <code>public static void</code> &#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x3068;&#x3001;HTTP Redirect &#x3068;&#x3057;&#x3066;&#x51E6;&#x7406;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;
+&#x4F8B;&#x3048;&#x3070;&#x3001;&#x4FDD;&#x5B58;&#x5F8C;&#x306B;&#x8A73;&#x7D30;&#x753B;&#x9762;&#x3092;&#x518D;&#x5EA6;&#x958B;&#x304D;&#x76F4;&#x3059;&#x306B;&#x306F;&#x3001;&#x5358;&#x306B;&#x8A73;&#x7D30;&#x753B;&#x9762;&#x3092;&#x8868;&#x793A;&#x3059;&#x308B;&#x305F;&#x3081;&#x306E;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x3092;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x3060;&#x3051;&#x3067;&#x6E08;&#x307F;&#x307E;&#x3059;&#x3002;</p><pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">show</span><span class="hljs-params">(String code)</span> </span>{
+    User user = ...
+    render(user);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">save</span><span class="hljs-params">(User user)</span> </span>{
+    user.save();
+    show(user.code);
+}</code></pre>
+<h2 id="&#x30A4;&#x30F3;&#x30BF;&#x30FC;&#x30BB;&#x30D7;&#x30B7;&#x30E7;&#x30F3;">&#x30A4;&#x30F3;&#x30BF;&#x30FC;&#x30BB;&#x30D7;&#x30B7;&#x30E7;&#x30F3;</h2><p>&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x5B9F;&#x884C;&#x306E;&#x524D;&#x5F8C;&#x306B;&#x51E6;&#x7406;&#x3092;&#x8FFD;&#x52A0;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x53EF;&#x80FD;&#x3067;&#x3059;&#x3002;</p><pre><code class="lang-java"><span class="hljs-comment">// &#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x5B9F;&#x884C;&#x524D;&#x306B;&#x52D5;&#x4F5C;&#x3059;&#x308B;</span>
+<span class="hljs-meta">@Before</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">before</span><span class="hljs-params">()</span> </span>{
+}
+
+<span class="hljs-comment">// &#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x5B9F;&#x884C;&#x5F8C;&#x306B;&#x52D5;&#x4F5C;&#x3059;&#x308B;</span>
+<span class="hljs-meta">@After</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">after</span><span class="hljs-params">()</span> </span>{
+}
+
+<span class="hljs-comment">// &#x4F8B;&#x5916;&#x767A;&#x751F;&#x6642;&#x306B;&#x52D5;&#x4F5C;&#x3059;&#x308B;</span>
+<span class="hljs-meta">@Catch</span>(IllegalStateException.class)
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">logIllegalState</span><span class="hljs-params">(Throwable throwable)</span> </span>{
+    Logger.error(<span class="hljs-string">&quot;Illegal state %s&#x2026;&quot;</span>, throwable);
+}
+
+<span class="hljs-comment">// &#x30E1;&#x30BD;&#x30C3;&#x30C9;&#x5B9F;&#x884C;&#x5F8C;&#x306B;&#x4F8B;&#x5916;&#x767A;&#x751F;&#x6709;&#x7121;&#x306B;&#x95A2;&#x308F;&#x3089;&#x305A;&#x52D5;&#x4F5C;&#x3059;&#x308B;</span>
+<span class="hljs-meta">@Finally</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">finallyAt</span><span class="hljs-params">()</span> </span>{
+}</code></pre>
+<p>&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x306F; <code>play.mvc.Controller</code> &#x3092;&#x7D99;&#x627F;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308B;&#x305F;&#x3081;&#x3001;&#x4E00;&#x90E8;&#x306E;&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x306B;&#x5BFE;&#x3057;&#x3066;&#x5171;&#x901A;&#x7684;&#x306A;&#x30A4;&#x30F3;&#x30BF;&#x30FC;&#x30BB;&#x30D7;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x8FFD;&#x52A0;&#x3059;&#x308B;&#x3001;&#x3068;&#x3044;&#x3063;&#x305F;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x305B;&#x3093;&#x3002;
+&#x305D;&#x306E;&#x5834;&#x5408;&#x306F; <code>@With</code> &#x30A2;&#x30CE;&#x30C6;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x3092;&#x5229;&#x7528;&#x3057;&#x307E;&#x3059;&#x3002;</p><pre><code class="lang-java"><span class="hljs-comment">// &#x8A8D;&#x8A3C;&#x30C1;&#x30A7;&#x30C3;&#x30AF;&#x3092;&#x3057;&#x305F;&#x3044;&#x30B3;&#x30F3;&#x30C8;&#x30ED;&#x30FC;&#x30E9;&#x306B;&#x3060;&#x3051; @With &#x3092;&#x4ED8;&#x3051;&#x308B;</span>
+<span class="hljs-meta">@With</span>(Authentication.class)
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SomeController</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span> </span>{
+}</code></pre>
+<p>&#x4F8B;&#x3048;&#x3070;&#x3001;<code>Authentication</code> &#x306B;&#x306F;&#x4EE5;&#x4E0B;&#x306E;&#x69D8;&#x306A;&#x8A8D;&#x8A3C;&#x30C1;&#x30A7;&#x30C3;&#x30AF;&#x306E;&#x30ED;&#x30B8;&#x30C3;&#x30AF;&#x3092;&#x8A18;&#x8FF0;&#x3057;&#x3066;&#x304A;&#x304F;&#x30A4;&#x30E1;&#x30FC;&#x30B8;&#x3067;&#x3059;&#x3002;</p><pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Authentication</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Controller</span> </span>{
+    <span class="hljs-meta">@Before</span>
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">checkAuthenticated</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">if</span>(!session.containsKey(<span class="hljs-string">&quot;user&quot;</span>)) {
+            unAuthorized();
+        }
+    }
+}    </code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="05_app_config.html" class="navigation navigation-prev " aria-label="Previous page: アプリケーション設定">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="07_template.html" class="navigation navigation-next " aria-label="Next page: テンプレート">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"コントローラ","level":"1.7","depth":1,"next":{"title":"テンプレート","level":"1.8","depth":1,"path":"base/07_template.md","ref":"base/07_template.md","articles":[]},"previous":{"title":"アプリケーション設定","level":"1.6","depth":1,"path":"base/05_app_config.md","ref":"base/05_app_config.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"base/06_controller.md","mtime":"2016-10-26T09:49:14.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-10-26T10:04:46.585Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

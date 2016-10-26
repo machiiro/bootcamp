@@ -90,11 +90,11 @@ document.getElementById('section').removeEventListener('click', handler, false);
 以下のコードの場合、バブリングフェーズで動作します。
 
 ```javascript
-document.getElementsByTagName('section')[0].addEventListener('click', function() {
+document.getElementsByTagName('section')[0].addEventListener('click', function(e) {
   console.log('section click!');
 }, false);
 
-document.getElementsByTagName('div')[0].addEventListener('click', function() {
+document.getElementsByTagName('div')[0].addEventListener('click', function(e) {
   console.log('div click!');
 }, false);
 ```
@@ -102,13 +102,27 @@ document.getElementsByTagName('div')[0].addEventListener('click', function() {
 以下のコードの場合、キャプチャリングフェーズで動作します。
 
 ```javascript
-document.getElementsByTagName('section')[0].addEventListener('click', function() {
+document.getElementsByTagName('section')[0].addEventListener('click', function(e) {
   console.log('section click!');
 }, true);
 
-document.getElementsByTagName('div')[0].addEventListener('click', function() {
+document.getElementsByTagName('div')[0].addEventListener('click', function(e) {
   console.log('div click!');
 }, true);
+```
+
+`stopPropagation` メソッドを実行すると、イベントの伝播を止めることができます。
+
+```javascript
+document.getElementsByTagName('section')[0].addEventListener('click', function(e) {
+  // 実行されない
+  console.log('section click!');
+}, false);
+
+document.getElementsByTagName('div')[0].addEventListener('click', function(e) {
+  console.log('div click!');
+  event.stopPropagation();
+}, false);
 ```
 
 ## イベントのキャンセル

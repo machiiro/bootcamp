@@ -81,18 +81,23 @@ obj.hello(); // Hello, yamada
 `new` キーワードを使って、関数をコンストラクタ (初期化を行う関数) としてオブジェクトを生成することができます。
 
 ```javascript
-var Foo = function(name) {
+var User = function(name, mailAddress) {
+  // this には新たに生成されたオブジェクトが格納されている
   this.name = name;
+  this.mailAddress = mailAddress;
 }
-Foo.prototype.hello = function() {
+Foo.prototype.say = function() {
   console.log('Hello, ' + this.name);
 }
 
-var obj = new Foo('yamada');
-obj.hello(); // Hello, yamada
+// user = {name: name, mailAddress: mailAddress}; とは書かない
+var user = new Foo('yamada');
+user.say(); // Hello, yamada
 ```
 
 コンストラクタ内の `this` に新たに生成されるオブジェクトが格納されているため、オブジェクトの初期化処理を実装することができます。
+`{}` リテラルでオブジェクトを生成するのではなく、コンストラクタを用いることで、よりオブジェクト指向なコーディングが可能です。
+
 `prototype` に関しては次章以降で説明していきます。
 
 ### call/apply での呼び出し
@@ -118,7 +123,7 @@ hello.apply(this, ['yamada']);
 関数の引数は `Arguments` オブジェクトとして `arguments` 変数に格納されます。
 引数が可変である場合に利用します。
 
-配列のように見えますが、オブジェクトであることに注意して下さい。
+配列のように見えますが、実際には配列とは異なるオブジェクトであることに注意して下さい。
 
 ```javascript
 var hello = function() {

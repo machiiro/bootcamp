@@ -104,7 +104,8 @@ var hello = function(name) {
 
 ## typeof 演算子
 
-値に対して typeof 演算子を指定することで、データ型を表す文字列を取得することが可能です。
+値に対して typeof 演算子を指定することで、データ型を表す文字列を取得することが可能です。  
+下記の結果の通り、`Array` や `Date` も実は `Object` であることがわかります。
 
 ```javascript
 console.log(typeof 'abc'); // 'string'

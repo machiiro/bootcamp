@@ -1,0 +1,352 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>タスクの制御 · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="06_role.html" />
+    
+    
+    <link rel="prev" href="04_module.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="00_prepare.html">
+            
+                <a href="00_prepare.html">
+            
+                    
+                    事前準備
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="01_about.html">
+            
+                <a href="01_about.html">
+            
+                    
+                    Ansible とは
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="02_getting_started.html">
+            
+                <a href="02_getting_started.html">
+            
+                    
+                    インストール〜基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="03_playbook.html">
+            
+                <a href="03_playbook.html">
+            
+                    
+                    playbook
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="04_module.html">
+            
+                <a href="04_module.html">
+            
+                    
+                    モジュール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7" data-path="05_task.html">
+            
+                <a href="05_task.html">
+            
+                    
+                    タスクの制御
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="06_role.html">
+            
+                <a href="06_role.html">
+            
+                    
+                    ロール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="07_custom_module.html">
+            
+                <a href="07_custom_module.html">
+            
+                    
+                    自作モジュール
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >タスクの制御</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x30BF;&#x30B9;&#x30AF;&#x306E;&#x5236;&#x5FA1;">&#x30BF;&#x30B9;&#x30AF;&#x306E;&#x5236;&#x5FA1;</h1><h2 id="withitems">with_items</h2><p>&#x30B7;&#x30FC;&#x30B1;&#x30F3;&#x30B9;&#x306E;&#x6570;&#x3060;&#x3051;&#x30EB;&#x30FC;&#x30D7;&#x3055;&#x305B;&#x3066;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x305F;&#x3044;&#x5834;&#x5408;&#x3001;<code>with_items</code> &#x3092;&#x4F7F;&#x7528;&#x3057;&#x307E;&#x3059;&#x3002;</p><pre><code class="lang-yaml"><span class="hljs-attr">vars:</span>
+<span class="hljs-attr">  packages:</span>
+<span class="hljs-bullet">    -</span> git
+<span class="hljs-bullet">    -</span> mosh
+<span class="hljs-attr">tasks:</span>
+<span class="hljs-attr">  - yum:</span> name={{ item }} state=latest
+<span class="hljs-attr">    with_items:</span> packages</code></pre>
+<p>&#x4ED6;&#x306B;&#x3082;&#x30DE;&#x30C3;&#x30D7;&#x3092;&#x30EB;&#x30FC;&#x30D7;&#x3055;&#x305B;&#x308B; <code>with_dict</code>&#x3001;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x30EA;&#x30B9;&#x30C8;&#x3092;&#x30EB;&#x30FC;&#x30D7;&#x3055;&#x305B;&#x308B; <code>with_fileglob</code> &#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</p><h2 id="register">register</h2><p>&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x306E;&#x5B9F;&#x884C;&#x7D50;&#x679C;&#x3092;&#x5909;&#x6570;&#x306B;&#x5B9A;&#x7FA9;&#x3057;&#x305F;&#x3044;&#x5834;&#x5408;&#x3001;<code>register</code> &#x3092;&#x4F7F;&#x7528;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x5909;&#x6570;&#x306E;&#x5185;&#x5BB9;&#x3092;&#x78BA;&#x8A8D;&#x3059;&#x308B;&#x306B;&#x306F; <code>debug</code> &#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3092;&#x4F7F;&#x7528;&#x3057;&#x307E;&#x3059;&#x3002;</p><pre><code class="lang-yaml"><span class="hljs-attr">- command:</span> date
+<span class="hljs-attr">  register:</span> d
+
+<span class="hljs-attr">- debug:</span> var=d</code></pre>
+<h2 id="when">when</h2><p>&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3092;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x6761;&#x4EF6;&#x3092;&#x5B9A;&#x7FA9;&#x3057;&#x305F;&#x3044;&#x5834;&#x5408;&#x3001;<code>when</code> &#x3092;&#x4F7F;&#x7528;&#x3057;&#x307E;&#x3059;&#x3002;</p><pre><code class="lang-yaml"><span class="hljs-attr">- apt:</span> name=apache2 state=latest
+<span class="hljs-attr">  when:</span> ansible_os_family = <span class="hljs-string">&quot;Debian&quot;</span>
+<span class="hljs-attr">- yum:</span> name=httpd state=latest
+<span class="hljs-attr">  when:</span> ansible_os_family = <span class="hljs-string">&quot;RedHat&quot;</span></code></pre>
+<h2 id="ignoreerrors">ignore_errors</h2><p>&#x30BF;&#x30B9;&#x30AF;&#x306E;&#x5B9F;&#x884C;&#x7D50;&#x679C;&#x304C;&#x30A8;&#x30E9;&#x30FC;&#x3068;&#x306A;&#x308B;&#x3068;&#x3001;Ansible &#x306E;&#x5B9F;&#x884C;&#x304C;&#x505C;&#x6B62;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x30A8;&#x30E9;&#x30FC;&#x767A;&#x751F;&#x6642;&#x3067;&#x3082; Ansible &#x306E;&#x5B9F;&#x884C;&#x3092;&#x505C;&#x6B62;&#x3055;&#x305B;&#x305F;&#x304F;&#x306A;&#x3044;&#x5834;&#x5408;&#x3001;<code>ignore_errors</code> &#x3092;&#x4F7F;&#x7528;&#x3057;&#x307E;&#x3059;&#x3002;</p><pre><code class="lang-yaml"><span class="hljs-attr">- command:</span> somescript.sh
+<span class="hljs-attr">  ignore_errors:</span> <span class="hljs-literal">yes</span></code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="04_module.html" class="navigation navigation-prev " aria-label="Previous page: モジュール">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="06_role.html" class="navigation navigation-next " aria-label="Next page: ロール">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"タスクの制御","level":"1.7","depth":1,"next":{"title":"ロール","level":"1.8","depth":1,"path":"base/06_role.md","ref":"base/06_role.md","articles":[]},"previous":{"title":"モジュール","level":"1.6","depth":1,"path":"base/04_module.md","ref":"base/04_module.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"base/05_task.md","mtime":"2016-10-26T08:55:00.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-10-26T09:44:21.627Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

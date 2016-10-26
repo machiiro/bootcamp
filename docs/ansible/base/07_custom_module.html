@@ -1,0 +1,391 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>自作モジュール · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="06_role.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="00_prepare.html">
+            
+                <a href="00_prepare.html">
+            
+                    
+                    事前準備
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="01_about.html">
+            
+                <a href="01_about.html">
+            
+                    
+                    Ansible とは
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="02_getting_started.html">
+            
+                <a href="02_getting_started.html">
+            
+                    
+                    インストール〜基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="03_playbook.html">
+            
+                <a href="03_playbook.html">
+            
+                    
+                    playbook
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="04_module.html">
+            
+                <a href="04_module.html">
+            
+                    
+                    モジュール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="05_task.html">
+            
+                <a href="05_task.html">
+            
+                    
+                    タスクの制御
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="06_role.html">
+            
+                <a href="06_role.html">
+            
+                    
+                    ロール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.9" data-path="07_custom_module.html">
+            
+                <a href="07_custom_module.html">
+            
+                    
+                    自作モジュール
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >自作モジュール</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x81EA;&#x4F5C;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;">&#x81EA;&#x4F5C;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;</h1><p>Ansible &#x306B;&#x306F; 200 &#x4EE5;&#x4E0A;&#x306E;&#x30E9;&#x30A4;&#x30D6;&#x30E9;&#x30EA;&#x304C;&#x7528;&#x610F;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x304C;&#x3001;
+&#x7528;&#x9014;&#x306B;&#x5408;&#x308F;&#x305B;&#x3066;&#x81EA;&#x5206;&#x3067;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3092;&#x4F5C;&#x6210;&#x3059;&#x308B;&#x3053;&#x3068;&#x3082;&#x53EF;&#x80FD;&#x3067;&#x3059;&#x3002;</p><p>&#x307E;&#x305F;&#x3001;&#x81EA;&#x4F5C;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x306F;&#x3069;&#x3093;&#x306A;&#x30B9;&#x30AF;&#x30EA;&#x30D7;&#x30C8;&#x8A00;&#x8A9E;&#x3067;&#x5B9F;&#x88C5;&#x3055;&#x308C;&#x3066;&#x3082;&#x69CB;&#x3044;&#x307E;&#x305B;&#x3093;&#x3002;
+bash &#x3067;&#x3082; python &#x3067;&#x3082; ruby &#x3067;&#x3082;&#x3001;&#x597D;&#x304D;&#x306A;&#x8A00;&#x8A9E;&#x3067;&#x5B9F;&#x88C5;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p><p><a href="http://docs.ansible.com/ansible/developing_modules.html" target="_blank">http://docs.ansible.com/ansible/developing_modules.html</a></p><h2 id="&#x81EA;&#x4F5C;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x306E;&#x914D;&#x7F6E;&#x5148;">&#x81EA;&#x4F5C;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x306E;&#x914D;&#x7F6E;&#x5148;</h2><p>&#x81EA;&#x4F5C;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x306F;&#x4EE5;&#x4E0B;&#x306E;&#x30D1;&#x30B9;&#x306B;&#x914D;&#x7F6E;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</p><ul><li>&#x5B9F;&#x884C;&#x3057;&#x305F;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x76F4;&#x4E0B;&#x306B;&#x3042;&#x308B; library &#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;
+</li>
+<li>ansible.cfg &#x306E; library &#x306B;&#x8A18;&#x8F09;&#x3057;&#x305F;&#x30D1;&#x30B9;
+</li>
+<li>&#x74B0;&#x5883;&#x5909;&#x6570; ANSIBLE_LIBRARY
+</li>
+<li>ansible-playbook &#x5B9F;&#x884C;&#x6642;&#x306B;&#x6307;&#x5B9A;&#x3057;&#x305F; --module-path (--M) &#x306E;&#x30D1;&#x30B9;
+</li>
+<li>role &#x5185;&#x306E; library &#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;
+</li></ul>
+<h2 id="&#x81EA;&#x4F5C;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x3066;&#x307F;&#x308B;">&#x81EA;&#x4F5C;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x3066;&#x307F;&#x308B;</h2><p>&#x4ECA;&#x56DE;&#x306F;&#x3001;&#x6307;&#x5B9A;&#x3057;&#x305F;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x30D0;&#x30C3;&#x30AF;&#x30A2;&#x30C3;&#x30D7;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x4E00;&#x5EA6;&#x3060;&#x3051;&#x4F5C;&#x308B;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p><p>&#x307E;&#x305A;&#x3001;<code>/ansible-tutorial/library</code> &#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x307E;&#x3059;&#x3002;</p><pre><code class="lang-bash">[vagrant]$ mkdir library</code></pre>
+<p>&#x6B21;&#x306B; <code>library/backup</code> &#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x3001;&#x4EE5;&#x4E0B;&#x306E;&#x5185;&#x5BB9;&#x3092;&#x30DA;&#x30FC;&#x30B9;&#x30C8;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x4ECA;&#x56DE;&#x306F; python &#x3067;&#x8A18;&#x8FF0;&#x3057;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p><pre><code class="lang-python"><span class="hljs-comment">#!/usr/bin/python</span>
+<span class="hljs-comment"># -*- coding: utf-8 -*-</span>
+
+<span class="hljs-keyword">import</span> re
+<span class="hljs-keyword">import</span> shutil
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-comment"># &#x5F15;&#x6570;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;</span>
+    module = AnsibleModule(
+        argument_spec = dict(
+            src = dict(required=<span class="hljs-keyword">True</span>)
+        )
+    )
+
+    src = os.path.expanduser(module.params[<span class="hljs-string">&apos;src&apos;</span>])
+    dest = src + <span class="hljs-string">&apos;.bak&apos;</span>
+
+    <span class="hljs-comment"># &#x81EA;&#x4F5C;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3067;&#x3082;&#x51AA;&#x7B49;&#x6027;&#x3092;&#x4FDD;&#x3064;&#x3088;&#x3046;&#x3001;changed &#x3092;&#x7BA1;&#x7406;&#x3059;&#x308B;</span>
+    changed = <span class="hljs-keyword">False</span>
+
+    <span class="hljs-comment"># &#x30D0;&#x30C3;&#x30AF;&#x30A2;&#x30C3;&#x30D7;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x304C;&#x5B58;&#x5728;&#x3057;&#x306A;&#x3044;&#x5834;&#x5408;&#x306E;&#x307F;&#x30B3;&#x30D4;&#x30FC;</span>
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> os.path.exists(dest):
+        shutil.copyfile(src, dest)
+        changed = <span class="hljs-keyword">True</span>
+
+    module.exit_json(dest = dest, src = src, changed = changed)
+
+<span class="hljs-comment"># import module snippets</span>
+<span class="hljs-keyword">from</span> ansible.module_utils.basic <span class="hljs-keyword">import</span> *
+main()</code></pre>
+<h2 id="&#x81EA;&#x4F5C;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3092;&#x4F7F;&#x7528;&#x3057;&#x3066;&#x307F;&#x308B;">&#x81EA;&#x4F5C;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3092;&#x4F7F;&#x7528;&#x3057;&#x3066;&#x307F;&#x308B;</h2><p><code>playbook.yml</code> &#x3067; backup &#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3092;&#x4F7F;&#x7528;&#x3059;&#x308B;&#x3088;&#x3046;&#x4FEE;&#x6B63;&#x3057;&#x307E;&#x3059;&#x3002;</p><pre><code class="lang-playbook.yml">- hosts: all
+  remote_user: ec2-user
+  become: yes
+  gather_facts: no
+  tasks:
+    - backup: src=/etc/hosts
+  # roles:
+  #   - nginx</code></pre>
+<p>&#x6B21;&#x306B; <code>backup</code> &#x306B;&#x5B9F;&#x884C;&#x6A29;&#x9650;&#x3092;&#x4ED8;&#x4E0E;&#x3057;&#x307E;&#x3059;&#x3002;</p><pre><code class="lang-bash">[vagrant]$ chmod +x library/backup</code></pre>
+<p>playbook &#x3092;&#x5B9F;&#x884C;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;
+2&#x56DE;&#x76EE;&#x306E;&#x5B9F;&#x884C;&#x3067;&#x306F; <code>changed</code> &#x3067;&#x306F;&#x306A;&#x304F; <code>ok</code> &#x3068;&#x306A;&#x308B;&#x3053;&#x3068;&#x3092;&#x78BA;&#x8A8D;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;
+&#x307E;&#x305F;&#x5B9F;&#x969B;&#x306B;&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x306B;&#x30ED;&#x30B0;&#x30A4;&#x30F3;&#x3057;&#x3001;<code>/etc/hosts.bak</code> &#x304C;&#x4F5C;&#x6210;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x3053;&#x3068;&#x3082;&#x78BA;&#x8A8D;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p><pre><code class="lang-bash">[vagrant]$ ansible-playbook nginx.yml
+
+PLAY ***************************************************************************
+
+TASK [backup] ******************************************************************
+changed: [xx.xx.xx.xx]
+
+PLAY RECAP *********************************************************************
+xx.xx.xx.xx                : ok=1    changed=1    unreachable=0    failed=0</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="06_role.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: ロール">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"自作モジュール","level":"1.9","depth":1,"previous":{"title":"ロール","level":"1.8","depth":1,"path":"base/06_role.md","ref":"base/06_role.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"base/07_custom_module.md","mtime":"2016-10-26T08:55:37.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-10-26T09:44:21.627Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

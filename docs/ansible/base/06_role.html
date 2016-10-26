@@ -1,0 +1,381 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>ロール · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="07_custom_module.html" />
+    
+    
+    <link rel="prev" href="05_task.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="00_prepare.html">
+            
+                <a href="00_prepare.html">
+            
+                    
+                    事前準備
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="01_about.html">
+            
+                <a href="01_about.html">
+            
+                    
+                    Ansible とは
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="02_getting_started.html">
+            
+                <a href="02_getting_started.html">
+            
+                    
+                    インストール〜基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="03_playbook.html">
+            
+                <a href="03_playbook.html">
+            
+                    
+                    playbook
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="04_module.html">
+            
+                <a href="04_module.html">
+            
+                    
+                    モジュール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="05_task.html">
+            
+                <a href="05_task.html">
+            
+                    
+                    タスクの制御
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8" data-path="06_role.html">
+            
+                <a href="06_role.html">
+            
+                    
+                    ロール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="07_custom_module.html">
+            
+                <a href="07_custom_module.html">
+            
+                    
+                    自作モジュール
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >ロール</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x30ED;&#x30FC;&#x30EB;">&#x30ED;&#x30FC;&#x30EB;</h1><p>playbook &#x306B;&#x3088;&#x308B;&#x4E00;&#x9023;&#x306E; task &#x3092;&#x5171;&#x6709;&#x3059;&#x308B;&#x4ED5;&#x7D44;&#x307F;&#x3092;<code>&#x30ED;&#x30FC;&#x30EB;</code>&#x3068;&#x547C;&#x3073;&#x307E;&#x3059;&#x3002;</p><h2 id="&#x30ED;&#x30FC;&#x30EB;&#x306E;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x69CB;&#x6210;">&#x30ED;&#x30FC;&#x30EB;&#x306E;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x69CB;&#x6210;</h2><p>&#x30ED;&#x30FC;&#x30EB;&#x306E;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x69CB;&#x6210;&#x306F;&#x4EE5;&#x4E0B;&#x306E;&#x901A;&#x308A;&#x3067;&#x3059;&#x3002;
+&#x5B9F;&#x884C;&#x3059;&#x308B; playbook.yml &#x3068;&#x540C;&#x968E;&#x5C64;&#x306B; <code>roles</code> &#x3068;&#x3044;&#x3046;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3092;&#x914D;&#x7F6E;&#x3057;&#x3001;&#x305D;&#x306E;&#x4E2D;&#x306B;&#x30ED;&#x30FC;&#x30EB;&#x3092;&#x5B9A;&#x7FA9;&#x3057;&#x3066;&#x3044;&#x304D;&#x307E;&#x3059;&#x3002;</p><pre><code>roles/
+    role-name/
+        meta/                     # &#x30E1;&#x30BF;&#x60C5;&#x5831;
+            main.yml
+        defaults/                 # &#x4E0A;&#x66F8;&#x304D;&#x53EF;&#x80FD;&#x306A;&#x5909;&#x6570;
+            main.yml
+        vars/                     # &#x56FA;&#x5B9A;&#x3068;&#x306A;&#x308B;&#x5909;&#x6570;
+            main.yml
+        files/                    # &#x30B3;&#x30D4;&#x30FC;&#x7528;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;
+            main.yml
+        templates/                # &#x30B3;&#x30D4;&#x30FC;&#x7528;&#x306E;&#x30C6;&#x30F3;&#x30D7;&#x30EC;&#x30FC;&#x30C8;&#x30D5;&#x30A1;&#x30A4;&#x30EB;
+            virtualhost.conf.j2
+        handlers/                 # &#x30CF;&#x30F3;&#x30C9;&#x30E9;&#x30FC;
+            main.yml
+        tasks/                    # &#x30BF;&#x30B9;&#x30AF;
+            main.yml</code></pre>
+<h2 id="&#x30ED;&#x30FC;&#x30EB;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x3066;&#x307F;&#x308B;">&#x30ED;&#x30FC;&#x30EB;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x3066;&#x307F;&#x308B;</h2><p>&#x5148;&#x307B;&#x3069;&#x5B9F;&#x884C;&#x3057;&#x305F; nginx &#x306E;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x30BF;&#x30B9;&#x30AF;&#x3092;&#x30ED;&#x30FC;&#x30EB;&#x306B;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;
+&#x307E;&#x305A;&#x3001;&#x4EE5;&#x4E0B;&#x306E;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x69CB;&#x6210;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x307E;&#x3059;&#x3002;</p><pre><code class="lang-bash">[vagrant]$ mkdir -p roles/nginx/tasks
+[vagrant]$ vi roles/nginx/tasks/main.yml</code></pre>
+<pre><code>roles/
+    nginx/
+        tasks/
+            main.yml</code></pre>
+<p><code>roles/nginx/tasks/main.yml</code> &#x306B;&#x4EE5;&#x4E0B;&#x306E;&#x5185;&#x5BB9;&#x3092;&#x30DA;&#x30FC;&#x30B9;&#x30C8;&#x3057;&#x307E;&#x3059;&#x3002;</p><pre><code class="lang-yaml"><span class="hljs-attr">- name:</span> Install nginx
+<span class="hljs-attr">  yum:</span> name=nginx state=latest update_cache=<span class="hljs-literal">yes</span>
+
+<span class="hljs-attr">- name:</span> Enabled nginx service
+<span class="hljs-attr">  service:</span> name=nginx state=started enabled=<span class="hljs-literal">yes</span></code></pre>
+<p>&#x6B21;&#x306B; nginx.yml &#x306B; <code>roles</code> &#x3092;&#x5B9A;&#x7FA9;&#x3057;&#x307E;&#x3059;&#x3002;</p><pre><code class="lang-yml"><span class="hljs-attr">- hosts:</span> all
+<span class="hljs-attr">  remote_user:</span> ec2-user
+<span class="hljs-attr">  become:</span> <span class="hljs-literal">yes</span>
+<span class="hljs-attr">  gather_facts:</span> <span class="hljs-literal">no</span>
+<span class="hljs-attr">  roles:</span>
+<span class="hljs-bullet">    -</span> nginx</code></pre>
+<p>&#x4FEE;&#x6B63;&#x3057;&#x305F; playbook &#x3092;&#x5B9F;&#x884C;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;
+&#x5909;&#x66F4;&#x524D;&#x3068;&#x540C;&#x69D8;&#x306B; nginx &#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x51E6;&#x7406;&#x304C;&#x52D5;&#x4F5C;&#x3059;&#x308B;&#x3053;&#x3068;&#x3092;&#x78BA;&#x8A8D;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p><pre><code class="lang-bash">[vagrant]$ ansible-playbook nginx.yml
+
+PLAY ***************************************************************************
+
+TASK [nginx : Install nginx] ***************************************************
+ok: [xx.xx.xx.xx]
+
+TASK [nginx : Enabled nginx service] *******************************************
+ok: [xx.xx.xx.xx]
+
+PLAY RECAP *********************************************************************
+xx.xx.xx.xx                : ok=2    changed=0    unreachable=0    failed=0</code></pre>
+<h2 id="&#x30ED;&#x30FC;&#x30EB;&#x306E;&#x5B9F;&#x884C;&#x9806;&#x5E8F;">&#x30ED;&#x30FC;&#x30EB;&#x306E;&#x5B9F;&#x884C;&#x9806;&#x5E8F;</h2><p><code>roles</code> &#x3068; <code>tasks</code> &#x304C;&#x4E21;&#x65B9;&#x5B9A;&#x7FA9;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x5834;&#x5408;&#x3001;roles &#x304C;&#x5148;&#x306B;&#x5B9F;&#x884C;&#x3055;&#x308C;&#x307E;&#x3059;&#x3002;</p>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="05_task.html" class="navigation navigation-prev " aria-label="Previous page: タスクの制御">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="07_custom_module.html" class="navigation navigation-next " aria-label="Next page: 自作モジュール">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"ロール","level":"1.8","depth":1,"next":{"title":"自作モジュール","level":"1.9","depth":1,"path":"base/07_custom_module.md","ref":"base/07_custom_module.md","articles":[]},"previous":{"title":"タスクの制御","level":"1.7","depth":1,"path":"base/05_task.md","ref":"base/05_task.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"base/06_role.md","mtime":"2016-10-26T08:55:15.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-10-26T09:44:21.627Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

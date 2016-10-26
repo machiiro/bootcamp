@@ -1,0 +1,397 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>事前準備 · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="01_about.html" />
+    
+    
+    <link rel="prev" href="../" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="00_prepare.html">
+            
+                <a href="00_prepare.html">
+            
+                    
+                    事前準備
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="01_about.html">
+            
+                <a href="01_about.html">
+            
+                    
+                    Ansible とは
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="02_getting_started.html">
+            
+                <a href="02_getting_started.html">
+            
+                    
+                    インストール〜基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="03_playbook.html">
+            
+                <a href="03_playbook.html">
+            
+                    
+                    playbook
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="04_module.html">
+            
+                <a href="04_module.html">
+            
+                    
+                    モジュール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="05_task.html">
+            
+                <a href="05_task.html">
+            
+                    
+                    タスクの制御
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="06_role.html">
+            
+                <a href="06_role.html">
+            
+                    
+                    ロール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="07_custom_module.html">
+            
+                <a href="07_custom_module.html">
+            
+                    
+                    自作モジュール
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >事前準備</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x4E8B;&#x524D;&#x6E96;&#x5099;">&#x4E8B;&#x524D;&#x6E96;&#x5099;</h1><h2 id="vagrant-&#x3092;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3059;&#x308B;">Vagrant &#x3092;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3059;&#x308B;</h2><p>Ansible &#x5B9F;&#x884C;&#x74B0;&#x5883;&#x3068;&#x3057;&#x3066; Vagrant &#x3092;&#x5229;&#x7528;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x30ED;&#x30FC;&#x30AB;&#x30EB;&#x74B0;&#x5883;&#x306B; Vagrant &#x304C;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3055;&#x308C;&#x3066;&#x3044;&#x306A;&#x3044;&#x5834;&#x5408;&#x306F;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p><p><a href="https://www.vagrantup.com/docs/installation/" target="_blank">https://www.vagrantup.com/docs/installation/</a></p><ul><li>VirtualBox &#x3092;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;
+</li>
+<li>Vagrant &#x3092;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;
+</li></ul>
+<h2 id="ansible-&#x5B9F;&#x884C;&#x74B0;&#x5883;&#x3092;&#x69CB;&#x7BC9;&#x3059;&#x308B;">Ansible &#x5B9F;&#x884C;&#x74B0;&#x5883;&#x3092;&#x69CB;&#x7BC9;&#x3059;&#x308B;</h2><p>&#x4EFB;&#x610F;&#x306E;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x307E;&#x3059;&#x3002;</p><pre><code class="lang-bash">$ mkdir ansible-tutorial</code></pre>
+<p>&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x914D;&#x4E0B;&#x306B;&#x3001;&#x65B0;&#x898F;&#x306B; <code>Vagrantfile</code> &#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x3001;&#x4EE5;&#x4E0B;&#x306E;&#x5185;&#x5BB9;&#x3092;&#x30DA;&#x30FC;&#x30B9;&#x30C8;&#x3057;&#x307E;&#x3059;&#x3002;</p><pre><code class="lang-Vagrantfile"># -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure(2) do |config|
+  config.vm.box = &quot;bento/centos-7.2&quot;
+  config.vm.hostname = &quot;vagrant-ansible&quot;
+
+  config.vm.network &quot;private_network&quot;, ip: &quot;192.168.33.10&quot;
+  config.ssh.forward_agent = true
+  config.vm.synced_folder &quot;./&quot;, &quot;/ansible-tutorial&quot;, mount_options: [&apos;dmode=777&apos;,&apos;fmode=755&apos;]
+end</code></pre>
+<p>&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x914D;&#x4E0B;&#x306B;&#x3001;Ansible &#x5B9F;&#x884C;&#x5BFE;&#x8C61;&#x306E;&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x306B;&#x63A5;&#x7D9A;&#x3059;&#x308B;&#x305F;&#x3081;&#x306E;&#x9375;&#x3092;&#x914D;&#x7F6E;&#x3057;&#x307E;&#x3059;&#x3002;</p><p>&#x4EE5;&#x4E0B;&#x304B;&#x3089;&#x30C0;&#x30A6;&#x30F3;&#x30ED;&#x30FC;&#x30C9;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p><p><a href="https://git.machiiro.jp:2443/machiiro/machiiro-tools-env/raw/master/files/machiiro-tools.pem" target="_blank">https://git.machiiro.jp:2443/machiiro/machiiro-tools-env/raw/master/files/machiiro-tools.pem</a></p><pre><code class="lang-bash">$ ansible-tutorial  ls
+Vagrantfile         machiiro-tools.pem</code></pre>
+<font color="red">&#x203B; Windows &#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x306E;&#x65B9;&#x3078;
+Windows &#x306E;&#x5834;&#x5408;&#x3001;&#x5171;&#x6709;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x914D;&#x4E0B;&#x3067; chmod &#x304C;&#x52B9;&#x304B;&#x306A;&#x3044;&#x3088;&#x3046;&#x306A;&#x306E;&#x3067;&#x3001;
+pem &#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x5171;&#x6709;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x5916;&#x306B;&#x914D;&#x7F6E;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;</font>
+
+
+
+<p>&#x6B21;&#x306B; <code>vagrant up</code> &#x3092;&#x5B9F;&#x884C;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x521D;&#x56DE;&#x5B9F;&#x884C;&#x6642;&#x306F;&#x5C11;&#x3057;&#x6642;&#x9593;&#x304C;&#x304B;&#x304B;&#x308A;&#x307E;&#x3059;&#x3002;</p><pre><code class="lang-bash">$ vagrant up
+Bringing machine <span class="hljs-string">&apos;default&apos;</span> up with <span class="hljs-string">&apos;virtualbox&apos;</span> provider...
+==&gt; default: Checking <span class="hljs-keyword">if</span> box <span class="hljs-string">&apos;bento/centos-7.1&apos;</span> is up to date...
+==&gt; default: A newer version of the box <span class="hljs-string">&apos;bento/centos-7.1&apos;</span> is available! You currently
+==&gt; default: have version <span class="hljs-string">&apos;2.2.1&apos;</span>. The latest is version <span class="hljs-string">&apos;2.2.2&apos;</span>. Run
+==&gt; default: `vagrant box update` to update.
+==&gt; default: Clearing any previously <span class="hljs-built_in">set</span> forwarded ports...
+==&gt; default: Clearing any previously <span class="hljs-built_in">set</span> network interfaces...
+==&gt; default: Preparing network interfaces based on configuration...
+    default: Adapter 1: nat
+    default: Adapter 2: hostonly
+==&gt; default: Forwarding ports...
+    default: 22 =&gt; 2222 (adapter 1)
+==&gt; default: Booting VM...
+==&gt; default: Waiting <span class="hljs-keyword">for</span> machine to boot. This may take a few minutes...
+    default: SSH address: 127.0.0.1:2222
+    default: SSH username: vagrant
+    default: SSH auth method: private key
+    default: Warning: Connection timeout. Retrying...
+==&gt; default: Machine booted and ready!
+==&gt; default: Checking <span class="hljs-keyword">for</span> guest additions <span class="hljs-keyword">in</span> VM...
+==&gt; default: Setting hostname...
+==&gt; default: Configuring and enabling network interfaces...
+==&gt; default: Mounting shared folders...
+    default: /vagrant =&gt; /Users/mkudo/dev/sandbox/ansible-tutorial
+    default: /ansible-tutorial =&gt; /Users/mkudo/dev/sandbox/ansible-tutorial</code></pre>
+<p><code>vagrant ssh</code> &#x3067; SSH &#x63A5;&#x7D9A;&#x3057;&#x3001;&#x9375;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x304C;&#x5B58;&#x5728;&#x3059;&#x308B;&#x3053;&#x3068;&#x3092;&#x78BA;&#x8A8D;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p><pre><code class="lang-bash">$ vagrant ssh
+Last login: Mon Feb  8 07:20:17 2016 from 10.0.2.2
+[vagrant@vagrant-ansible ~]$ <span class="hljs-built_in">cd</span> /ansible-tutorial/
+[vagrant@vagrant-ansible ansible-tutorial]$ ls
+Vagrantfile  machiiro-tools.pem</code></pre>
+<h2 id="windows-&#x3067;&#x306E;&#x78BA;&#x8A8D;&#x624B;&#x9806;">Windows &#x3067;&#x306E;&#x78BA;&#x8A8D;&#x624B;&#x9806;</h2><p>vagrant &#x306E; ssh &#x63A5;&#x7D9A;&#x60C5;&#x5831;&#x3092;~/.ssh/config &#x306B;&#x8FFD;&#x52A0;&#x5F8C;</p><pre><code class="lang-bash">$ vagrant ssh-config --host ansible &gt;&gt; ~/.ssh/config</code></pre>
+<p><code>ssh ansible</code> &#x3067; SSH &#x63A5;&#x7D9A;&#x3057;&#x3001;&#x9375;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x304C;&#x5B58;&#x5728;&#x3059;&#x308B;&#x3053;&#x3068;&#x3092;&#x78BA;&#x8A8D;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;</p><pre><code class="lang-bash">$ ssh ansible
+Last login: Mon Feb  8 07:20:17 2016 from 10.0.2.2
+[vagrant@vagrant-ansible ~]$ <span class="hljs-built_in">cd</span> /ansible-tutorial/
+[vagrant@vagrant-ansible ansible-tutorial]$ ls
+Vagrantfile  machiiro-tools.pem</code></pre>
+<p>&#x203B; &#x8FFD;&#x8A18;</p><p>&#x4EE5;&#x4E0B;&#x306E;&#x69D8;&#x306B; vagrant ssh &#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x53E9;&#x3051;&#x3070;&#x3001;&#x4E0A;&#x8A18;&#x306E;&#x624B;&#x9806;&#x3092;&#x8E0F;&#x307E;&#x305A;&#x306B;&#x78BA;&#x8A8D;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;</p><pre><code class="lang-bash">$ vagrant ssh -- -t -t</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="01_about.html" class="navigation navigation-next " aria-label="Next page: Ansible とは">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"事前準備","level":"1.2","depth":1,"next":{"title":"Ansible とは","level":"1.3","depth":1,"path":"base/01_about.md","ref":"base/01_about.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"base/00_prepare.md","mtime":"2016-10-26T09:06:04.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-10-26T09:44:21.627Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

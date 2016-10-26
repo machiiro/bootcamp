@@ -1,0 +1,366 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>インストール〜基本操作 · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="03_playbook.html" />
+    
+    
+    <link rel="prev" href="01_about.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="00_prepare.html">
+            
+                <a href="00_prepare.html">
+            
+                    
+                    事前準備
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="01_about.html">
+            
+                <a href="01_about.html">
+            
+                    
+                    Ansible とは
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="02_getting_started.html">
+            
+                <a href="02_getting_started.html">
+            
+                    
+                    インストール〜基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="03_playbook.html">
+            
+                <a href="03_playbook.html">
+            
+                    
+                    playbook
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="04_module.html">
+            
+                <a href="04_module.html">
+            
+                    
+                    モジュール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="05_task.html">
+            
+                <a href="05_task.html">
+            
+                    
+                    タスクの制御
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="06_role.html">
+            
+                <a href="06_role.html">
+            
+                    
+                    ロール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="07_custom_module.html">
+            
+                <a href="07_custom_module.html">
+            
+                    
+                    自作モジュール
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >インストール〜基本操作</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x301C;&#x57FA;&#x672C;&#x64CD;&#x4F5C;">&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x301C;&#x57FA;&#x672C;&#x64CD;&#x4F5C;</h1><h2 id="ansible-&#x3092;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;">Ansible &#x3092;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;</h2><p>&#x307E;&#x305A;&#x306F; Ansible &#x3092;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;
+Ansible 2.0 &#x3092;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3059;&#x308B;&#x305F;&#x3081;&#x3001;<code>pip</code> &#x3092;&#x4F7F;&#x3063;&#x3066;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3057;&#x307E;&#x3059;&#x3002;</p><p>&#x306A;&#x304A;&#x3001;Ansible &#x306E;&#x5B9F;&#x884C;&#x306B;&#x306F; python &#x304C;&#x5FC5;&#x8981;&#x3067;&#x3059;&#x304C;&#x3001;&#x4ECA;&#x56DE;&#x69CB;&#x7BC9;&#x3057;&#x305F;&#x5B9F;&#x884C;&#x74B0;&#x5883;&#x306B;&#x306F;&#x65E2;&#x306B;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x305F;&#x3081;&#x3001;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x4F5C;&#x696D;&#x306F;&#x4E0D;&#x8981;&#x3067;&#x3059;&#x3002;</p><pre><code class="lang-bash">[vagrant]$ sudo yum install gcc python-devel -y
+[vagrant]$ curl https://bootstrap.pypa.io/ez_setup.py -o - | sudo python
+[vagrant]$ curl https://bootstrap.pypa.io/get-pip.py -o - | sudo python
+[vagrant]$ sudo pip install ansible</code></pre>
+<p><code>ansible --version</code> &#x3092;&#x5B9F;&#x884C;&#x3057;&#x3001;2.0 &#x304C;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x3053;&#x3068;&#x3092;&#x78BA;&#x8A8D;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p><pre><code class="lang-bash">[vagrant]$ ansible --version
+ansible 2.0.0.2
+  config file =
+  configured module search path = Default w/o overrides</code></pre>
+<h2 id="inventory-&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x4F5C;&#x6210;&#x3059;&#x308B;">inventory &#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x4F5C;&#x6210;&#x3059;&#x308B;</h2><p>Ansible &#x306E;&#x5B9F;&#x884C;&#x5BFE;&#x8C61;&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x3092;&#x5B9A;&#x7FA9;&#x3057;&#x305F; inventory &#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x4F5C;&#x6210;&#x3057;&#x307E;&#x3059;&#x3002;
+inventory &#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306F; ini &#x5F62;&#x5F0F;&#x3067;&#x4F5C;&#x6210;&#x3057;&#x307E;&#x3059;&#x3002;</p><p><code>/etc/ansible/hosts</code> &#x306B;&#x4F5C;&#x6210;&#x3059;&#x308B;&#x3068;&#x3001;&#x5B9F;&#x884C;&#x6642;&#x306B;&#x81EA;&#x52D5;&#x7684;&#x306B;&#x8AAD;&#x307F;&#x8FBC;&#x307E;&#x308C;&#x308B;&#x306E;&#x3067;&#x305D;&#x3061;&#x3089;&#x306B;&#x4F5C;&#x6210;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p><pre><code class="lang-bash">[vagrant]$ sudo mkdir -p /etc/ansible
+[vagrant]$ sudo vi /etc/ansible/hosts</code></pre>
+<p>&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x4E2D;&#x8EAB;&#x306B;&#x306F;&#x3001;&#x4E8B;&#x524D;&#x306B;&#x914D;&#x5E03;&#x3055;&#x308C;&#x305F; EC2 &#x30A4;&#x30F3;&#x30B9;&#x30BF;&#x30F3;&#x30B9;&#x306E;&#x30D1;&#x30D6;&#x30EA;&#x30C3;&#x30AF; IP &#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x3092;&#x8A18;&#x8F09;&#x3057;&#x307E;&#x3059;&#x3002;</p><pre><code class="lang-/etc/ansible/hosts">xx.xx.xx.xx</code></pre>
+<h2 id="ansible-&#x30B3;&#x30DE;&#x30F3;&#x30C9;">ansible &#x30B3;&#x30DE;&#x30F3;&#x30C9;</h2><p><code>ansible</code> &#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x4F7F;&#x3063;&#x3066;&#x3001;&#x7C21;&#x5358;&#x306A;&#x30B7;&#x30A7;&#x30EB;&#x3092;&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x4E0A;&#x3067;&#x5B9F;&#x884C;&#x3057;&#x3066;&#x307F;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p><pre><code class="lang-bash">[vagrant]$ ansible all -m <span class="hljs-built_in">command</span> <span class="hljs-_">-a</span> <span class="hljs-string">&quot;uptime&quot;</span> -u ec2-user --private-key machiiro-tools.pem
+xx.xx.xx.xx | SUCCESS | rc=0 &gt;&gt;
+ 07:41:19 up 34 min,  1 user,  load average: 0.00, 0.01, 0.05</code></pre>
+<ul><li><p><code>all</code> &#x3092;&#x6307;&#x5B9A;&#x3057;&#x305F;&#x3053;&#x3068;&#x3067;&#x3001;inventory &#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306B;&#x8A18;&#x8F09;&#x3055;&#x308C;&#x305F;&#x5168;&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x304C;&#x5BFE;&#x8C61;&#x3068;&#x306A;&#x308A;&#x307E;&#x3059;</p><ul><li><code>all</code> &#x306E;&#x4EE3;&#x308F;&#x308A;&#x306B; IP &#x30A2;&#x30C9;&#x30EC;&#x30B9;&#x3092;&#x6307;&#x5B9A;&#x3059;&#x308B;&#x3068;&#x3001;&#x5BFE;&#x8C61;&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x306E;&#x307F;&#x306B;&#x5BFE;&#x3057;&#x3066;&#x5B9F;&#x884C;&#x3055;&#x308C;&#x307E;&#x3059;
+</li></ul>
+</li>
+<li><p><code>-m</code> &#x3067;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3092;&#x6307;&#x5B9A;&#x3057;&#x307E;&#x3059;&#x3002;&#x8A73;&#x7D30;&#x306F;&#x5225;&#x7AE0;&#x3067;&#x8AAC;&#x660E;&#x3057;&#x307E;&#x3059;</p></li>
+<li><code>-a</code> &#x3067;&#x5B9F;&#x884C;&#x30B7;&#x30A7;&#x30EB;&#x3092;&#x6307;&#x5B9A;&#x3057;&#x307E;&#x3059;
+</li>
+<li><code>-u</code> &#x3067;&#x5B9F;&#x884C;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x3092;&#x6307;&#x5B9A;&#x3057;&#x307E;&#x3059;
+</li>
+<li><code>--private-key</code> &#x3067; SSH &#x79D8;&#x5BC6;&#x9375;&#x3092;&#x6307;&#x5B9A;&#x3057;&#x307E;&#x3059;
+</li></ul>
+<h2 id="ansiblecfg-&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x4F5C;&#x6210;&#x3059;&#x308B;">ansible.cfg &#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x4F5C;&#x6210;&#x3059;&#x308B;</h2><p>&#x6BCE;&#x56DE; <code>--private-key</code> &#x3092;&#x6307;&#x5B9A;&#x3059;&#x308B;&#x306E;&#x306F;&#x7169;&#x96D1;&#x306A;&#x306E;&#x3067;&#x3001;Ansible &#x8A2D;&#x5B9A;&#x30D5;&#x30A1;&#x30A4;&#x30EB; <code>ansible.cfg</code> &#x3092;&#x4F5C;&#x6210;&#x3057;&#x307E;&#x3057;&#x3087;&#x3046;&#x3002;</p><pre><code class="lang-bash">[vagrant]$ sudo vi /etc/ansible/ansible.cfg</code></pre>
+<pre><code class="lang-/etc/ansible/ansible.cfg">[defaults]
+private_key_file=./machiiro-tools.pem</code></pre>
+<p><code>--private-key</code> &#x3092;&#x6307;&#x5B9A;&#x305B;&#x305A;&#x306B;&#x3001;<code>ansible-playbook</code> &#x304C;&#x5B9F;&#x884C;&#x53EF;&#x80FD;&#x306A;&#x3053;&#x3068;&#x3092;&#x78BA;&#x8A8D;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p><pre><code class="lang-bash">[vagrant]$ ansible all -m <span class="hljs-built_in">command</span> <span class="hljs-_">-a</span> <span class="hljs-string">&quot;uptime&quot;</span> -u ec2-user
+xx.xx.xx.xx | SUCCESS | rc=0 &gt;&gt;
+ 07:41:19 up 34 min,  1 user,  load average: 0.00, 0.01, 0.05</code></pre>
+<p>ansible.cfg &#x306B;&#x306F;&#x4ED6;&#x306B;&#x3082;&#x69D8;&#x3005;&#x306A;&#x8A2D;&#x5B9A;&#x9805;&#x76EE;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;
+<a href="http://docs.ansible.com/ansible/intro_configuration.html" target="_blank">http://docs.ansible.com/ansible/intro_configuration.html</a></p>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="01_about.html" class="navigation navigation-prev " aria-label="Previous page: Ansible とは">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="03_playbook.html" class="navigation navigation-next " aria-label="Next page: playbook">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"インストール〜基本操作","level":"1.4","depth":1,"next":{"title":"playbook","level":"1.5","depth":1,"path":"base/03_playbook.md","ref":"base/03_playbook.md","articles":[]},"previous":{"title":"Ansible とは","level":"1.3","depth":1,"path":"base/01_about.md","ref":"base/01_about.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"base/02_getting_started.md","mtime":"2016-10-26T08:46:39.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-10-26T09:44:21.627Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

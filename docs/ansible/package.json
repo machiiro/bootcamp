@@ -1,0 +1,13 @@
+{
+  "name": "bootcamp-ansible",
+  "version": "1.0.0",
+  "scripts": {
+    "gitbook": "gitbook",
+    "serve": "gitbook serve",
+    "build": "gitbook build ./ ../docs/ansible/"
+  },
+  "author": "machiiro Inc.",
+  "dependencies": {
+    "gitbook-cli": "^2.3.0"
+  }
+}

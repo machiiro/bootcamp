@@ -1,0 +1,358 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>Ansible とは · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="02_getting_started.html" />
+    
+    
+    <link rel="prev" href="00_prepare.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="00_prepare.html">
+            
+                <a href="00_prepare.html">
+            
+                    
+                    事前準備
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="01_about.html">
+            
+                <a href="01_about.html">
+            
+                    
+                    Ansible とは
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="02_getting_started.html">
+            
+                <a href="02_getting_started.html">
+            
+                    
+                    インストール〜基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="03_playbook.html">
+            
+                <a href="03_playbook.html">
+            
+                    
+                    playbook
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="04_module.html">
+            
+                <a href="04_module.html">
+            
+                    
+                    モジュール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="05_task.html">
+            
+                <a href="05_task.html">
+            
+                    
+                    タスクの制御
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="06_role.html">
+            
+                <a href="06_role.html">
+            
+                    
+                    ロール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="07_custom_module.html">
+            
+                <a href="07_custom_module.html">
+            
+                    
+                    自作モジュール
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Ansible とは</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="ansible-&#x3068;&#x306F;">Ansible &#x3068;&#x306F;</h1><h2 id="infrastructure-as-code">Infrastructure as Code</h2><p>&#x6614;&#x306A;&#x304C;&#x3089;&#x306E;&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x69CB;&#x7BC9;&#x3067;&#x306F;&#x3001;&#x7269;&#x7406;&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x3092;&#x8ABF;&#x9054;&#x3057;&#x3066;&#x62C5;&#x5F53;&#x30A8;&#x30F3;&#x30B8;&#x30CB;&#x30A2;&#x304C;&#x624B;&#x9806;&#x66F8;&#x306B;&#x5F93;&#x3063;&#x3066;&#x30DF;&#x30C9;&#x30EB;&#x30A6;&#x30A7;&#x30A2;&#x3092;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3059;&#x308B;&#x3001;&#x3068;&#x3044;&#x3063;&#x305F;&#x4F5C;&#x696D;&#x304C;&#x4E00;&#x822C;&#x7684;&#x3067;&#x3057;&#x305F;&#x3002;
+&#x8FD1;&#x5E74;&#x3067;&#x306F; AWS EC2 &#x3092;&#x4EE3;&#x8868;&#x3068;&#x3059;&#x308B;&#x4EEE;&#x60F3;&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x306E;&#x5229;&#x7528;&#x304C;&#x4E00;&#x822C;&#x7684;&#x3068;&#x306A;&#x308A;&#x3001;&#x4EE5;&#x524D;&#x3068;&#x306F;&#x6BD4;&#x8F03;&#x306B;&#x306A;&#x3089;&#x306A;&#x3044;&#x7A0B;&#x306E;&#x30B9;&#x30D4;&#x30FC;&#x30C9;&#x30FB;&#x53F0;&#x6570;&#x3067;&#x306E;&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x69CB;&#x7BC9; &#x304C;&#x884C;&#x308F;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+&#x305D;&#x306E;&#x3088;&#x3046;&#x306A;&#x80CC;&#x666F;&#x306E;&#x4E2D;&#x3001;&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x3092;&#x30BD;&#x30D5;&#x30C8;&#x30A6;&#x30A7;&#x30A2;&#x3068;&#x540C;&#x69D8;&#x306B;&#x30B3;&#x30FC;&#x30C9;&#x3092;&#x30D9;&#x30FC;&#x30B9;&#x3068;&#x3057;&#x3066;&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x30FB;&#x30D7;&#x30ED;&#x30D3;&#x30B8;&#x30E7;&#x30CB;&#x30F3;&#x30B0;&#x3092;&#x884C;&#x3046; <code>Infrastructure as Code</code> &#x3068;&#x3044;&#x3046;&#x6D41;&#x308C;&#x304C;&#x51FA;&#x3066;&#x304D;&#x307E;&#x3057;&#x305F;&#x3002;</p><p>&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x30FB;&#x30D7;&#x30ED;&#x30D3;&#x30B8;&#x30E7;&#x30CB;&#x30F3;&#x30B0;&#x306B;&#x3064;&#x3044;&#x3066;&#x306F;&#x3001;&#x5927;&#x304D;&#x304F;&#x4EE5;&#x4E0B;&#x306E; 3 &#x3064;&#x306E;&#x30EC;&#x30A4;&#x30E4;&#x30FC;&#x3067;&#x8AAC;&#x660E;&#x3055;&#x308C;&#x308B;&#x3053;&#x3068;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;
+&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x30FB;&#x30D7;&#x30ED;&#x30D3;&#x30B8;&#x30E7;&#x30CB;&#x30F3;&#x30B0;&#x306E;&#x305F;&#x3081;&#x306E;&#x30C4;&#x30FC;&#x30EB;&#x306F;&#x3001;&#x5BFE;&#x8C61;&#x3068;&#x3059;&#x308B;&#x30EC;&#x30A4;&#x30E4;&#x30FC;&#x304C;&#x7570;&#x306A;&#x308B;&#x305F;&#x3081;&#x3001;&#x9069;&#x5207;&#x306B;&#x9078;&#x629E;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</p><ul><li><p>Bootstrapping: OS &#x306E;&#x30D7;&#x30ED;&#x30D3;&#x30B8;&#x30E7;&#x30CB;&#x30F3;&#x30B0;</p><ul><li>AWS
+</li></ul>
+</li>
+<li><p>Configuration: &#x30B7;&#x30B9;&#x30C6;&#x30E0;&#x69CB;&#x6210;&#x306E;&#x30D7;&#x30ED;&#x30D3;&#x30B8;&#x30E7;&#x30CB;&#x30F3;&#x30B0;</p><ul><li>Chef&#x3001;Puppet&#x3001;Ansible &#x306A;&#x3069;&#x306E;&#x69CB;&#x6210;&#x7BA1;&#x7406;&#x30C4;&#x30FC;&#x30EB;
+</li></ul>
+</li>
+<li><p>Orchestration: &#x30A2;&#x30D7;&#x30EA;&#x30B1;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306E;&#x30D7;&#x30ED;&#x30D3;&#x30B8;&#x30E7;&#x30CB;&#x30F3;&#x30B0;</p><ul><li>Capistrano&#x3001;Fabirc &#x306A;&#x3069;&#x306E;&#x30C7;&#x30D7;&#x30ED;&#x30A4;&#x30C4;&#x30FC;&#x30EB;
+</li></ul>
+</li></ul>
+<p>&#x307E;&#x305F;&#x3001;&#x30EC;&#x30A4;&#x30E4;&#x30FC;&#x3092;&#x8DE8;&#x3063;&#x3066;&#x7D71;&#x5408;&#x7BA1;&#x7406;&#x3059;&#x308B;&#x305F;&#x3081;&#x306E;&#x30AA;&#x30FC;&#x30B1;&#x30B9;&#x30C8;&#x30EC;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x30C4;&#x30FC;&#x30EB;&#x3068;&#x3057;&#x3066;&#x3001;Terraform &#x3084; AWS CloudFormation &#x306A;&#x3069;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;&#x3002;</p><h2 id="ansible-&#x3068;&#x306F;">Ansible &#x3068;&#x306F;</h2><p>Ansible &#x3068;&#x306F;&#x3001;&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x69CB;&#x6210;&#x7BA1;&#x7406;&#x30C4;&#x30FC;&#x30EB;&#x306E;1&#x3064;&#x3067;&#x3059;&#x3002;
+&#x7279;&#x5FB4;&#x306F;&#x4EE5;&#x4E0B;&#x306E;&#x901A;&#x308A;&#x3067;&#x3059;&#x3002;</p><ul><li><p>SSH &#x63A5;&#x7D9A;&#x304C;&#x53EF;&#x80FD;&#x3067;&#x3042;&#x308C;&#x3070;&#x5B9F;&#x884C;&#x3067;&#x304D;&#x3001;&#x5BFE;&#x8C61;&#x30DB;&#x30B9;&#x30C8;&#x5074;&#x306B;&#x30A8;&#x30FC;&#x30B8;&#x30A7;&#x30F3;&#x30C8;&#x304C;&#x4E0D;&#x8981;</p><ul><li>Chef&#x3001;Puppet &#x306F;&#x30A8;&#x30FC;&#x30B8;&#x30A7;&#x30F3;&#x30C8;&#x304C;&#x5FC5;&#x8981;
+</li></ul>
+</li>
+<li><p>&#x51AA;&#x7B49;&#x6027;&#x304C;&#x4FDD;&#x8A3C;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;</p></li>
+<li>&#x30B7;&#x30F3;&#x30D7;&#x30EB;
+<ul><li>&#x5B9F;&#x884C;&#x9806;&#x5E8F;&#x306E;&#x628A;&#x63E1;&#x304C;&#x5BB9;&#x6613;
+</li>
+<li>&#x30B7;&#x30A7;&#x30EB;&#x30B9;&#x30AF;&#x30EA;&#x30D7;&#x30C8;&#x304B;&#x3089;&#x306E;&#x79FB;&#x884C;&#x304C;&#x5BB9;&#x6613;
+</li>
+<li>&#x90E8;&#x5206;&#x7684;&#x306A; Ansible &#x5316;&#x304C;&#x5BB9;&#x6613;
+</li></ul>
+</li></ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="00_prepare.html" class="navigation navigation-prev " aria-label="Previous page: 事前準備">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="02_getting_started.html" class="navigation navigation-next " aria-label="Next page: インストール〜基本操作">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Ansible とは","level":"1.3","depth":1,"next":{"title":"インストール〜基本操作","level":"1.4","depth":1,"path":"base/02_getting_started.md","ref":"base/02_getting_started.md","articles":[]},"previous":{"title":"事前準備","level":"1.2","depth":1,"path":"base/00_prepare.md","ref":"base/00_prepare.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"base/01_about.md","mtime":"2016-10-26T09:06:39.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-10-26T09:44:21.627Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

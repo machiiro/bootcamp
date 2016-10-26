@@ -1,0 +1,364 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>モジュール · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="05_task.html" />
+    
+    
+    <link rel="prev" href="03_playbook.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="00_prepare.html">
+            
+                <a href="00_prepare.html">
+            
+                    
+                    事前準備
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="01_about.html">
+            
+                <a href="01_about.html">
+            
+                    
+                    Ansible とは
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="02_getting_started.html">
+            
+                <a href="02_getting_started.html">
+            
+                    
+                    インストール〜基本操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="03_playbook.html">
+            
+                <a href="03_playbook.html">
+            
+                    
+                    playbook
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6" data-path="04_module.html">
+            
+                <a href="04_module.html">
+            
+                    
+                    モジュール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="05_task.html">
+            
+                <a href="05_task.html">
+            
+                    
+                    タスクの制御
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="06_role.html">
+            
+                <a href="06_role.html">
+            
+                    
+                    ロール
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="07_custom_module.html">
+            
+                <a href="07_custom_module.html">
+            
+                    
+                    自作モジュール
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >モジュール</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;">&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;</h1><p>Ansible &#x3067;&#x3088;&#x304F;&#x5229;&#x7528;&#x3055;&#x308C;&#x308B;&#x4EE3;&#x8868;&#x7684;&#x306A;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3092;&#x7D39;&#x4ECB;&#x3057;&#x307E;&#x3059;&#x3002;</p><h2 id="user">user</h2><p>&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x8FFD;&#x52A0;&#x3084;&#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;&#x8A2D;&#x5B9A;&#x306A;&#x3069;&#x3001;&#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x64CD;&#x4F5C;&#x3092;&#x884C;&#x3046;&#x305F;&#x3081;&#x306E;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3067;&#x3059;&#x3002;
+<a href="http://docs.ansible.com/ansible/user_module.html" target="_blank">http://docs.ansible.com/ansible/user_module.html</a></p><pre><code class="lang-yaml"><span class="hljs-comment"># &#x30E6;&#x30FC;&#x30B6;&#x30FC;&#x3092;&#x8FFD;&#x52A0;&#x3059;&#x308B;</span>
+<span class="hljs-attr">- user:</span> name=johnd comment=<span class="hljs-string">&quot;John Doe&quot;</span> uid=<span class="hljs-number">1040</span> group=admin</code></pre>
+<h2 id="command">command</h2><p>&#x4EFB;&#x610F;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x305F;&#x3081;&#x306E;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3067;&#x3059;&#x3002;
+<a href="http://docs.ansible.com/ansible/command_module.html" target="_blank">http://docs.ansible.com/ansible/command_module.html</a></p><pre><code class="lang-yaml"><span class="hljs-attr">- command:</span> /usr/bin/make_database.sh arg1 arg2</code></pre>
+<h2 id="shell">shell</h2><p>&#x4EFB;&#x610F;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x305F;&#x3081;&#x306E;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3067;&#x3059;&#x3002;
+<code>command</code> &#x3068;&#x306F;&#x7570;&#x306A;&#x308A;&#x3001;<code>&gt; (&#x30EA;&#x30C0;&#x30A4;&#x30EC;&#x30AF;&#x30C8;)</code> &#x3084; <code>| (&#x30D1;&#x30A4;&#x30D7;)</code> &#x3092;&#x4F7F;&#x7528;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x307E;&#x3059;&#x3002;
+<a href="http://docs.ansible.com/ansible/shell_module.html" target="_blank">http://docs.ansible.com/ansible/shell_module.html</a></p><pre><code class="lang-yaml"><span class="hljs-attr">- shell:</span> somescript.sh &gt;&gt; somelog.txt</code></pre>
+<h2 id="stat">stat</h2><p>&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x72B6;&#x614B;&#x3092;&#x53D6;&#x5F97;&#x3059;&#x308B;&#x305F;&#x3081;&#x306E;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3067;&#x3059;&#x3002;
+<code>register</code> &#x3092;&#x4F75;&#x7528;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x3001;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x72B6;&#x614B;&#x3092;&#x5909;&#x6570;&#x3068;&#x3057;&#x3066;&#x5B9A;&#x7FA9;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x3067;&#x304D;&#x308B;&#x305F;&#x3081;&#x3001;
+&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x304C;&#x5B58;&#x5728;&#x3057;&#x306A;&#x3044;&#x5834;&#x5408;&#x306E;&#x307F;&#x30BF;&#x30B9;&#x30AF;&#x3092;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x3001;&#x3068;&#x3044;&#x3063;&#x305F;&#x5236;&#x5FA1;&#x304C;&#x53EF;&#x80FD;&#x3068;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;</p><pre><code class="lang-yaml"><span class="hljs-comment"># &#x5909;&#x6570; p &#x306B; stat &#x306E;&#x7D50;&#x679C;&#x3092;&#x683C;&#x7D0D;</span>
+<span class="hljs-attr">- stat:</span> path=/path/to/something
+<span class="hljs-attr">  register:</span> p
+
+<span class="hljs-comment"># &#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x304C;&#x5B58;&#x5728;&#x3059;&#x308B;&#x5834;&#x5408;&#x306E;&#x307F;&#x5B9F;&#x884C;</span>
+<span class="hljs-attr">- debug:</span> msg=<span class="hljs-string">&quot;Path exists and is a directory&quot;</span>
+<span class="hljs-attr">  when:</span> p.stat.isdir is defined and p.stat.isdir</code></pre>
+<h2 id="file">file</h2><p>&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x30FB;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x306E;&#x4F5C;&#x6210;&#x3001;owner/group &#x306E;&#x5909;&#x66F4;&#x3001;&#x30B7;&#x30F3;&#x30DC;&#x30EA;&#x30C3;&#x30AF;&#x30EA;&#x30F3;&#x30AF;&#x306E;&#x4F5C;&#x6210;&#x7B49;&#x3092;&#x884C;&#x3046;&#x305F;&#x3081;&#x306E;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3067;&#x3059;&#x3002;
+<a href="http://docs.ansible.com/ansible/file_module.html" target="_blank">http://docs.ansible.com/ansible/file_module.html</a></p><pre><code class="lang-yaml"><span class="hljs-comment"># &#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3092;&#x4F5C;&#x6210;</span>
+<span class="hljs-attr">- file:</span> path=/etc/some_directory state=directory mode=<span class="hljs-number">0755</span></code></pre>
+<h2 id="copy">copy</h2><p>Ansible &#x5B9F;&#x884C;&#x30DB;&#x30B9;&#x30C8;&#x306B;&#x914D;&#x7F6E;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x5BFE;&#x8C61;&#x30DB;&#x30B9;&#x30C8;&#x306B;&#x30B3;&#x30D4;&#x30FC;&#x3059;&#x308B;&#x305F;&#x3081;&#x306E;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3067;&#x3059;&#x3002;
+<a href="http://docs.ansible.com/ansible/copy_module.html" target="_blank">http://docs.ansible.com/ansible/copy_module.html</a></p><pre><code class="lang-yaml"><span class="hljs-attr">- copy:</span> src=/srv/myfiles/foo.conf dest=/etc/foo.conf owner=foo group=foo mode=<span class="hljs-number">0644</span></code></pre>
+<h2 id="template">template</h2><p>&#x5909;&#x6570;&#x304C;&#x57CB;&#x3081;&#x8FBC;&#x307E;&#x308C;&#x305F;&#x30C6;&#x30F3;&#x30D7;&#x30EC;&#x30FC;&#x30C8;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x5909;&#x6570;&#x3092;&#x89E3;&#x6C7A;&#x3057;&#x3001;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x5BFE;&#x8C61;&#x30DB;&#x30B9;&#x30C8;&#x306B;&#x30B3;&#x30D4;&#x30FC;&#x3059;&#x308B;&#x305F;&#x3081;&#x306E;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3067;&#x3059;&#x3002;
+&#x30C6;&#x30F3;&#x30D7;&#x30EC;&#x30FC;&#x30C8;&#x30A8;&#x30F3;&#x30B8;&#x30F3;&#x306B;&#x306F; Python &#x306E; Jinja2 &#x304C;&#x4F7F;&#x7528;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;
+<a href="http://docs.ansible.com/ansible/template_module.html" target="_blank">http://docs.ansible.com/ansible/template_module.html</a></p><pre><code class="lang-yaml"><span class="hljs-attr">- template:</span> src=/mytemplates/foo.j2 dest=/etc/file.conf owner=bin group=wheel mode=<span class="hljs-number">0644</span></code></pre>
+<h2 id="geturl">get_url</h2><p>&#x6307;&#x5B9A; URL &#x304B;&#x3089;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x30C0;&#x30A6;&#x30F3;&#x30ED;&#x30FC;&#x30C9;&#x3059;&#x308B;&#x305F;&#x3081;&#x306E;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3067;&#x3059;&#x3002;
+<a href="http://docs.ansible.com/ansible/get_url_module.html" target="_blank">http://docs.ansible.com/ansible/get_url_module.html</a></p><pre><code class="lang-yaml"><span class="hljs-attr">- get_url:</span> url=http://example.com/path/file.conf dest=/etc/foo.conf mode=<span class="hljs-number">0440</span></code></pre>
+<h2 id="yum">yum</h2><p>yum &#x3067;&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x3092;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3059;&#x308B;&#x305F;&#x3081;&#x306E;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3067;&#x3059;&#x3002;
+<a href="http://docs.ansible.com/ansible/yum_module.html" target="_blank">http://docs.ansible.com/ansible/yum_module.html</a></p><pre><code class="lang-yaml"><span class="hljs-attr">- yum:</span> name=nginx state=latest</code></pre>
+<h2 id="service">service</h2><p>&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x306E;&#x8D77;&#x52D5;&#x72B6;&#x614B;&#x3001;&#x518D;&#x8D77;&#x52D5;&#x8A2D;&#x5B9A;&#x3092;&#x884C;&#x3046;&#x305F;&#x3081;&#x306E;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x3067;&#x3059;&#x3002;
+<a href="http://docs.ansible.com/ansible/service_module.html" target="_blank">http://docs.ansible.com/ansible/service_module.html</a></p><pre><code class="lang-yaml"><span class="hljs-attr">- service:</span> name=nginx state=started</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="03_playbook.html" class="navigation navigation-prev " aria-label="Previous page: playbook">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="05_task.html" class="navigation navigation-next " aria-label="Next page: タスクの制御">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"モジュール","level":"1.6","depth":1,"next":{"title":"タスクの制御","level":"1.7","depth":1,"path":"base/05_task.md","ref":"base/05_task.md","articles":[]},"previous":{"title":"playbook","level":"1.5","depth":1,"path":"base/03_playbook.md","ref":"base/03_playbook.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"base/04_module.md","mtime":"2016-10-26T08:47:19.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-10-26T09:44:21.627Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

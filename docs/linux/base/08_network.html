@@ -1,0 +1,378 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>ネットワーク · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="07_process.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="01_login_logout.html">
+            
+                <a href="01_login_logout.html">
+            
+                    
+                    ログイン・ログアウト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="02_user.html">
+            
+                <a href="02_user.html">
+            
+                    
+                    ユーザー操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="03_file.html">
+            
+                <a href="03_file.html">
+            
+                    
+                    ファイル操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="04_vi.html">
+            
+                <a href="04_vi.html">
+            
+                    
+                    vi でファイルを編集する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="05_spec.html">
+            
+                <a href="05_spec.html">
+            
+                    
+                    マシンの情報を知る
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="06_package.html">
+            
+                <a href="06_package.html">
+            
+                    
+                    パッケージ管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="07_process.html">
+            
+                <a href="07_process.html">
+            
+                    
+                    プロセス管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.9" data-path="08_network.html">
+            
+                <a href="08_network.html">
+            
+                    
+                    ネットワーク
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >ネットワーク</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x30CD;&#x30C3;&#x30C8;&#x30EF;&#x30FC;&#x30AF;">&#x30CD;&#x30C3;&#x30C8;&#x30EF;&#x30FC;&#x30AF;</h1><h2 id="ifconfig---&#x30DE;&#x30B7;&#x30F3;&#x306E;&#x30CD;&#x30C3;&#x30C8;&#x30EF;&#x30FC;&#x30AF;&#x30A4;&#x30F3;&#x30BF;&#x30FC;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x3092;&#x78BA;&#x8A8D;&#x3059;&#x308B;">ifconfig - &#x30DE;&#x30B7;&#x30F3;&#x306E;&#x30CD;&#x30C3;&#x30C8;&#x30EF;&#x30FC;&#x30AF;&#x30A4;&#x30F3;&#x30BF;&#x30FC;&#x30D5;&#x30A7;&#x30FC;&#x30B9;&#x3092;&#x78BA;&#x8A8D;&#x3059;&#x308B;</h2><pre><code class="lang-bash">$ ifconfig
+eth0      Link encap:Ethernet  HWaddr 06:2C:A1:83:83:B5
+          inet addr:10.0.0.151  Bcast:10.0.0.255  Mask:255.255.255.0
+          inet6 addr: fe80::42c:a1ff:fe83:83b5/64 Scope:Link
+          UP BROADCAST RUNNING MULTICAST  MTU:9001  Metric:1
+          RX packets:782321 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:688739 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:1000
+          RX bytes:76371020 (72.8 MiB)  TX bytes:340366945 (324.5 MiB)
+
+lo        Link encap:Local Loopback
+          inet addr:127.0.0.1  Mask:255.0.0.0
+          inet6 addr: ::1/128 Scope:Host
+          UP LOOPBACK RUNNING  MTU:65536  Metric:1
+          RX packets:37755 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:37755 errors:0 dropped:0 overruns:0 carrier:0
+          collisions:0 txqueuelen:0
+          RX bytes:75419781 (71.9 MiB)  TX bytes:75419781 (71.9 MiB)</code></pre>
+<h2 id="ping---&#x5BFE;&#x8C61;&#x30DB;&#x30B9;&#x30C8;&#x3068;&#x306E;&#x30CD;&#x30C3;&#x30C8;&#x30EF;&#x30FC;&#x30AF;&#x758E;&#x901A;&#x78BA;&#x8A8D;&#x3092;&#x884C;&#x3046;">ping - &#x5BFE;&#x8C61;&#x30DB;&#x30B9;&#x30C8;&#x3068;&#x306E;&#x30CD;&#x30C3;&#x30C8;&#x30EF;&#x30FC;&#x30AF;&#x758E;&#x901A;&#x78BA;&#x8A8D;&#x3092;&#x884C;&#x3046;</h2><pre><code class="lang-bash">$ ping www.google.co.jp
+PING www.google.co.jp (216.58.221.163) 56(84) bytes of data.
+64 bytes from kix03s01-in<span class="hljs-_">-f</span>163.1e100.net (216.58.221.163): icmp_seq=1 ttl=57 time=8.27 ms
+64 bytes from kix03s01-in<span class="hljs-_">-f</span>163.1e100.net (216.58.221.163): icmp_seq=2 ttl=57 time=8.28 ms</code></pre>
+<h2 id="nc---&#x5BFE;&#x8C61;&#x30DB;&#x30B9;&#x30C8;&#x306E;&#x7279;&#x5B9A;&#x30DD;&#x30FC;&#x30C8;&#x306B;&#x5BFE;&#x3057;&#x3066;&#x758E;&#x901A;&#x78BA;&#x8A8D;&#x3092;&#x884C;&#x3046;">nc - &#x5BFE;&#x8C61;&#x30DB;&#x30B9;&#x30C8;&#x306E;&#x7279;&#x5B9A;&#x30DD;&#x30FC;&#x30C8;&#x306B;&#x5BFE;&#x3057;&#x3066;&#x758E;&#x901A;&#x78BA;&#x8A8D;&#x3092;&#x884C;&#x3046;</h2><pre><code class="lang-bash">$ nc -zv {IP&#x30A2;&#x30C9;&#x30EC;&#x30B9;} {&#x30DD;&#x30FC;&#x30C8;}
+found 0 associations
+found 1 connections:
+     1:    flags=82&lt;CONNECTED,PREFERRED&gt;
+    outif en0
+    src xx.xx.xx.xx port 55731
+    dst xx.xx.xx.xx port 80
+    rank info not available
+    TCP aux info available
+
+Connection to xx.xx.xx.xx port 80 [tcp/http] succeeded!</code></pre>
+<h2 id="dig---&#x30C9;&#x30E1;&#x30A4;&#x30F3;&#x60C5;&#x5831;&#x3092;-dns-&#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x306B;&#x554F;&#x5408;&#x305B;&#x308B;">dig - &#x30C9;&#x30E1;&#x30A4;&#x30F3;&#x60C5;&#x5831;&#x3092; DNS &#x30B5;&#x30FC;&#x30D0;&#x30FC;&#x306B;&#x554F;&#x5408;&#x305B;&#x308B;</h2><pre><code class="lang-bash">$ dig redmine.machiiro.jp
+
+; &lt;&lt;&gt;&gt; DiG 9.8.3-P1 &lt;&lt;&gt;&gt; redmine.machiiro.jp
+;; global options: +cmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 16059
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;redmine.machiiro.jp.        IN    A
+
+;; ANSWER SECTION:
+redmine.machiiro.jp.    3600    IN    A    52.193.54.224
+
+;; Query time: 12 msec
+;; SERVER: 210.145.254.169<span class="hljs-comment">#53(210.145.254.169)</span>
+;; WHEN: Fri Mar 11 10:46:14 2016
+;; MSG SIZE  rcvd: 53</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="07_process.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: プロセス管理">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"ネットワーク","level":"1.9","depth":1,"previous":{"title":"プロセス管理","level":"1.8","depth":1,"path":"base/07_process.md","ref":"base/07_process.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"base/08_network.md","mtime":"2016-10-26T04:11:42.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-10-26T04:17:40.781Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

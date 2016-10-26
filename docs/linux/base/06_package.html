@@ -1,0 +1,349 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>パッケージ管理 · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="07_process.html" />
+    
+    
+    <link rel="prev" href="05_spec.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="01_login_logout.html">
+            
+                <a href="01_login_logout.html">
+            
+                    
+                    ログイン・ログアウト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="02_user.html">
+            
+                <a href="02_user.html">
+            
+                    
+                    ユーザー操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="03_file.html">
+            
+                <a href="03_file.html">
+            
+                    
+                    ファイル操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="04_vi.html">
+            
+                <a href="04_vi.html">
+            
+                    
+                    vi でファイルを編集する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="05_spec.html">
+            
+                <a href="05_spec.html">
+            
+                    
+                    マシンの情報を知る
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7" data-path="06_package.html">
+            
+                <a href="06_package.html">
+            
+                    
+                    パッケージ管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="07_process.html">
+            
+                <a href="07_process.html">
+            
+                    
+                    プロセス管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="08_network.html">
+            
+                <a href="08_network.html">
+            
+                    
+                    ネットワーク
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >パッケージ管理</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x7BA1;&#x7406;">&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x7BA1;&#x7406;</h1><p>&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x7BA1;&#x7406;&#x306E;&#x305F;&#x3081;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x306F; Linux &#x30C7;&#x30A3;&#x30B9;&#x30C8;&#x30EA;&#x30D3;&#x30E5;&#x30FC;&#x30B7;&#x30E7;&#x30F3;&#x306B;&#x3088;&#x3063;&#x3066;&#x7570;&#x306A;&#x308A;&#x307E;&#x3059;&#x3002;
+&#x3053;&#x3053;&#x3067;&#x306F; RHEL/CentOS/Amazon Linux &#x3067;&#x4F7F;&#x308F;&#x308C;&#x308B; <code>yum</code> &#x306E;&#x4F7F;&#x3044;&#x65B9;&#x3092;&#x89E3;&#x8AAC;&#x3057;&#x307E;&#x3059;&#x3002;</p><h2 id="yum-info---&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x306E;&#x8A73;&#x7D30;&#x60C5;&#x5831;&#x3092;&#x8868;&#x793A;&#x3059;&#x308B;">yum info - &#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x306E;&#x8A73;&#x7D30;&#x60C5;&#x5831;&#x3092;&#x8868;&#x793A;&#x3059;&#x308B;</h2><pre><code>$ yum info git</code></pre>
+<h2 id="yum-search---&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x60C5;&#x5831;&#x3092;&#x691C;&#x7D22;&#x3059;&#x308B;">yum search - &#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x60C5;&#x5831;&#x3092;&#x691C;&#x7D22;&#x3059;&#x308B;</h2><pre><code>$ yum search git</code></pre>
+<h2 id="yum-list---&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x53EF;&#x80FD;&#x306A;&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x306E;&#x4E00;&#x89A7;&#x3092;&#x8868;&#x793A;&#x3059;&#x308B;">yum list - &#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x53EF;&#x80FD;&#x306A;&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x306E;&#x4E00;&#x89A7;&#x3092;&#x8868;&#x793A;&#x3059;&#x308B;</h2><pre><code class="lang-bash">$ yum list
+
+<span class="hljs-comment"># &#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x6E08;&#x307F;&#x306E;&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x306E;&#x307F;&#x3092;&#x8868;&#x793A;&#x3059;&#x308B;</span>
+$ yum list installed
+
+<span class="hljs-comment"># grep &#x3092;&#x4F75;&#x7528;&#x3057;&#x3001;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3055;&#x308C;&#x3066;&#x3044;&#x308B;&#x304B;&#x3069;&#x3046;&#x304B;&#x3092;&#x78BA;&#x8A8D;&#x3059;&#x308B;</span>
+$ yum list installed | grep git</code></pre>
+<h2 id="yum-install---&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x3092;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3059;&#x308B;">yum install - &#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x3092;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3059;&#x308B;</h2><pre><code class="lang-bash">$ yum install git
+
+<span class="hljs-comment"># &#x30B5;&#x30A4;&#x30EC;&#x30F3;&#x30C8;&#x30A4;&#x30F3;&#x30B9;&#x30C8;&#x30FC;&#x30EB;&#x3059;&#x308B;</span>
+$ yum install git -y</code></pre>
+<h2 id="yum-update---&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x3092;&#x66F4;&#x65B0;&#x3059;&#x308B;">yum update - &#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x3092;&#x66F4;&#x65B0;&#x3059;&#x308B;</h2><pre><code class="lang-bash">$ yum update git</code></pre>
+<h2 id="yum-remove---&#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x3092;&#x524A;&#x9664;&#x3059;&#x308B;">yum remove - &#x30D1;&#x30C3;&#x30B1;&#x30FC;&#x30B8;&#x3092;&#x524A;&#x9664;&#x3059;&#x308B;</h2><pre><code class="lang-bash">$ yum remove git</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="05_spec.html" class="navigation navigation-prev " aria-label="Previous page: マシンの情報を知る">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="07_process.html" class="navigation navigation-next " aria-label="Next page: プロセス管理">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"パッケージ管理","level":"1.7","depth":1,"next":{"title":"プロセス管理","level":"1.8","depth":1,"path":"base/07_process.md","ref":"base/07_process.md","articles":[]},"previous":{"title":"マシンの情報を知る","level":"1.6","depth":1,"path":"base/05_spec.md","ref":"base/05_spec.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"base/06_package.md","mtime":"2016-10-26T04:10:52.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-10-26T04:17:40.781Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

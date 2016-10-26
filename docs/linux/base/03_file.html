@@ -1,0 +1,402 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>ファイル操作 · GitBook</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.0">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="04_vi.html" />
+    
+    
+    <link rel="prev" href="02_user.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="01_login_logout.html">
+            
+                <a href="01_login_logout.html">
+            
+                    
+                    ログイン・ログアウト
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="02_user.html">
+            
+                <a href="02_user.html">
+            
+                    
+                    ユーザー操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="03_file.html">
+            
+                <a href="03_file.html">
+            
+                    
+                    ファイル操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="04_vi.html">
+            
+                <a href="04_vi.html">
+            
+                    
+                    vi でファイルを編集する
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="05_spec.html">
+            
+                <a href="05_spec.html">
+            
+                    
+                    マシンの情報を知る
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="06_package.html">
+            
+                <a href="06_package.html">
+            
+                    
+                    パッケージ管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="07_process.html">
+            
+                <a href="07_process.html">
+            
+                    
+                    プロセス管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="08_network.html">
+            
+                <a href="08_network.html">
+            
+                    
+                    ネットワーク
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >ファイル操作</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x64CD;&#x4F5C;">&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x64CD;&#x4F5C;</h1><h2 id="pwd---&#x73FE;&#x5728;&#x306E;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3092;&#x78BA;&#x8A8D;&#x3059;&#x308B;">pwd - &#x73FE;&#x5728;&#x306E;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3092;&#x78BA;&#x8A8D;&#x3059;&#x308B;</h2><pre><code class="lang-bash">$ <span class="hljs-built_in">pwd</span>
+/home/ec2-user</code></pre>
+<h2 id="cd---&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3092;&#x79FB;&#x52D5;&#x3059;&#x308B;">cd - &#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3092;&#x79FB;&#x52D5;&#x3059;&#x308B;</h2><pre><code class="lang-bash">$ <span class="hljs-built_in">cd</span> /etc
+
+<span class="hljs-comment"># &#x4F55;&#x3082;&#x6307;&#x5B9A;&#x3057;&#x306A;&#x3044;&#x3068;&#x30DB;&#x30FC;&#x30E0;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x306B;&#x79FB;&#x52D5;&#x3059;&#x308B;</span>
+$ <span class="hljs-built_in">cd</span></code></pre>
+<h2 id="ls---&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x30FB;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x4E00;&#x89A7;&#x3092;&#x8868;&#x793A;&#x3059;&#x308B;">ls - &#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x30FB;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x4E00;&#x89A7;&#x3092;&#x8868;&#x793A;&#x3059;&#x308B;</h2><pre><code class="lang-bash"><span class="hljs-comment"># &#x30AB;&#x30EC;&#x30F3;&#x30C8;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x914D;&#x4E0B;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x30FB;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3092;&#x8868;&#x793A;&#x3059;&#x308B;</span>
+$ ls
+
+<span class="hljs-comment"># &#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x30FB;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x306E;&#x8A73;&#x7D30;&#x3092;&#x8868;&#x793A;&#x3059;&#x308B;</span>
+$ ls <span class="hljs-_">-l</span>
+
+<span class="hljs-comment"># &#x30C9;&#x30C3;&#x30C8;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3082;&#x5408;&#x308F;&#x305B;&#x3066;&#x8868;&#x793A;&#x3059;&#x308B;</span>
+$ ls -al
+
+<span class="hljs-comment"># &#x6307;&#x5B9A;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x914D;&#x4E0B;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x30FB;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3092;&#x8868;&#x793A;&#x3059;&#x308B;</span>
+$ ls /etc</code></pre>
+<h2 id="mkdir---&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3092;&#x4F5C;&#x6210;&#x3059;&#x308B;">mkdir - &#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3092;&#x4F5C;&#x6210;&#x3059;&#x308B;</h2><pre><code class="lang-bash">$ mkdir foo
+
+<span class="hljs-comment"># &#x30B5;&#x30D6;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x307E;&#x3067;&#x4F5C;&#x6210;&#x3059;&#x308B;</span>
+$ mkdir -p foo/baar</code></pre>
+<h2 id="rmdir---&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3092;&#x524A;&#x9664;&#x3059;&#x308B;">rmdir - &#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3092;&#x524A;&#x9664;&#x3059;&#x308B;</h2><pre><code class="lang-bash"><span class="hljs-comment"># foo &#x914D;&#x4E0B;&#x306B;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x304C;&#x4F55;&#x3082;&#x306A;&#x3044;&#x72B6;&#x614B;&#x3067;&#x306A;&#x3051;&#x308C;&#x3070;&#x524A;&#x9664;&#x3067;&#x304D;&#x306A;&#x3044;</span>
+$ rmdir foo</code></pre>
+<h2 id="rm---&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x524A;&#x9664;&#x3059;&#x308B;">rm - &#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x524A;&#x9664;&#x3059;&#x308B;</h2><pre><code class="lang-bash">$ rm hoge.txt
+
+<span class="hljs-comment"># &#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3068;&#x4E2D;&#x8EAB;&#x3092;&#x4E38;&#x3054;&#x3068;&#x524A;&#x9664;&#x3059;&#x308B;</span>
+$ rm -R foo
+
+<span class="hljs-comment"># &#x8B66;&#x544A;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x3092;&#x51FA;&#x3055;&#x305A;&#x524A;&#x9664;&#x3059;&#x308B;</span>
+$ rm -Rf foo</code></pre>
+<h2 id="cat---&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x4E2D;&#x8EAB;&#x3092;&#x8868;&#x793A;&#x3059;&#x308B;">cat - &#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x4E2D;&#x8EAB;&#x3092;&#x8868;&#x793A;&#x3059;&#x308B;</h2><pre><code class="lang-bash">$ cat /etc/hosts</code></pre>
+<h2 id="cp---&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x30B3;&#x30D4;&#x30FC;&#x3059;&#x308B;">cp - &#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x30B3;&#x30D4;&#x30FC;&#x3059;&#x308B;</h2><pre><code class="lang-bash">$ cp foo.txt foo.txt.bak
+
+<span class="hljs-comment"># &#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3092;&#x4E38;&#x3054;&#x3068;&#x30B3;&#x30D4;&#x30FC;&#x3059;&#x308B;</span>
+$ cp -R foo bar</code></pre>
+<h2 id="touch---&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x30BF;&#x30A4;&#x30E0;&#x30B9;&#x30BF;&#x30F3;&#x30D7;&#x3092;&#x66F4;&#x65B0;&#x3059;&#x308B;">touch - &#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x30BF;&#x30A4;&#x30E0;&#x30B9;&#x30BF;&#x30F3;&#x30D7;&#x3092;&#x66F4;&#x65B0;&#x3059;&#x308B;</h2><pre><code class="lang-bash">$ touch foo.txt
+
+<span class="hljs-comment"># &#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x304C;&#x5B58;&#x5728;&#x3057;&#x306A;&#x3044;&#x5834;&#x5408;&#x306F;&#x7A7A;&#x306E;&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x304C;&#x4F5C;&#x6210;&#x3055;&#x308C;&#x308B;</span>
+$ touch foo2.txt</code></pre>
+<h2 id="mv---&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x30FB;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3092;&#x79FB;&#x52D5;&#x3059;&#x308B;-&#xFF1D;&#x30EA;&#x30CD;&#x30FC;&#x30E0;&#x3059;&#x308B;">mv - &#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x30FB;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3092;&#x79FB;&#x52D5;&#x3059;&#x308B; (&#xFF1D;&#x30EA;&#x30CD;&#x30FC;&#x30E0;&#x3059;&#x308B;)</h2><pre><code class="lang-bash">$ mv foo bar</code></pre>
+<h2 id="ln---&#x30B7;&#x30F3;&#x30DC;&#x30EA;&#x30C3;&#x30AF;&#x30EA;&#x30F3;&#x30AF;&#x3092;&#x4F5C;&#x6210;&#x3059;&#x308B;">ln - &#x30B7;&#x30F3;&#x30DC;&#x30EA;&#x30C3;&#x30AF;&#x30EA;&#x30F3;&#x30AF;&#x3092;&#x4F5C;&#x6210;&#x3059;&#x308B;</h2><pre><code class="lang-bash">$ ln <span class="hljs-_">-s</span> /usr/<span class="hljs-built_in">local</span>/bin ~/bin
+
+<span class="hljs-comment"># &#x4F5C;&#x6210;&#x3057;&#x305F;&#x30B7;&#x30F3;&#x30DC;&#x30EA;&#x30C3;&#x30AF;&#x30EA;&#x30F3;&#x30AF;&#x306F; ls &#x3067;&#x78BA;&#x8A8D;&#x53EF;&#x80FD;</span>
+$ ls <span class="hljs-_">-l</span>
+lrwxrwxrwx 1 ec2-user ec2-user 14  3&#x6708; 10 19:38 bin -&gt; /usr/<span class="hljs-built_in">local</span>/bin
+
+<span class="hljs-comment"># rm &#x3067;&#x524A;&#x9664;&#x53EF;&#x80FD;</span>
+$ rm bin</code></pre>
+<h2 id="chown---&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x30AA;&#x30FC;&#x30CA;&#x30FC;&#x60C5;&#x5831;&#x3092;&#x5909;&#x66F4;&#x3059;&#x308B;">chown - &#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x30AA;&#x30FC;&#x30CA;&#x30FC;&#x60C5;&#x5831;&#x3092;&#x5909;&#x66F4;&#x3059;&#x308B;</h2><pre><code class="lang-bash"><span class="hljs-comment"># &#x30E6;&#x30FC;&#x30B6;&#x30FC; nginx &#x3001;&#x30B0;&#x30EB;&#x30FC;&#x30D7; nginx &#x306B;&#x5909;&#x66F4;&#x3059;&#x308B;</span>
+$ chown nginx:nginx foo.txt
+
+<span class="hljs-comment"># &#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x914D;&#x4E0B;&#x3092;&#x4E00;&#x62EC;&#x3067;&#x5909;&#x66F4;&#x3059;&#x308B;</span>
+$ chown -R nginx:nginx foo/</code></pre>
+<h2 id="chmod---&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x30FB;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x306E;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x6A29;&#x3092;&#x5909;&#x66F4;&#x3059;&#x308B;">chmod - &#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x30FB;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x306E;&#x30A2;&#x30AF;&#x30BB;&#x30B9;&#x6A29;&#x3092;&#x5909;&#x66F4;&#x3059;&#x308B;</h2><pre><code class="lang-bash"><span class="hljs-comment"># &#x30B7;&#x30A7;&#x30EB;&#x306B;&#x5B9F;&#x884C;&#x6A29;&#x9650;&#x3092;&#x4ED8;&#x4E0E;&#x3059;&#x308B;</span>
+$ chmod +x foo.sh
+
+<span class="hljs-comment"># &#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x914D;&#x4E0B;&#x3092;&#x4E00;&#x62EC;&#x3067;&#x5909;&#x66F4;&#x3059;&#x308B;</span>
+$ chmod -R 755 foo/</code></pre>
+<h2 id="find---&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x30FB;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3092;&#x691C;&#x7D22;&#x3059;&#x308B;">find - &#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x30FB;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3092;&#x691C;&#x7D22;&#x3059;&#x308B;</h2><pre><code class="lang-bash"><span class="hljs-comment"># &#x30DB;&#x30FC;&#x30E0;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x914D;&#x4E0B;&#x306E; html &#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x3092;&#x691C;&#x7D22;</span>
+$ find ~/ -name *.html</code></pre>
+<h2 id="tar---&#x30A2;&#x30FC;&#x30AB;&#x30A4;&#x30D6;&#x3092;&#x4F5C;&#x6210;&#x30FB;&#x5C55;&#x958B;&#x3059;&#x308B;">tar - &#x30A2;&#x30FC;&#x30AB;&#x30A4;&#x30D6;&#x3092;&#x4F5C;&#x6210;&#x30FB;&#x5C55;&#x958B;&#x3059;&#x308B;</h2><pre><code class="lang-bash"><span class="hljs-comment"># &#x30A2;&#x30FC;&#x30AB;&#x30A4;&#x30D6;&#x3092;&#x4F5C;&#x6210;&#x3059;&#x308B;</span>
+$ tar czvf foo/ foo.tar.gz
+
+<span class="hljs-comment"># &#x30A2;&#x30FC;&#x30AB;&#x30A4;&#x30D6;&#x3092;&#x5C55;&#x958B;&#x3059;&#x308B;</span>
+$ tar xzvf foo.tar.gz</code></pre>
+<h2 id="tail---&#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x672B;&#x5C3E;&#x3092;&#x8868;&#x793A;&#x3059;&#x308B;">tail - &#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x672B;&#x5C3E;&#x3092;&#x8868;&#x793A;&#x3059;&#x308B;</h2><pre><code class="lang-bash">$ tail /var/<span class="hljs-built_in">log</span>/maillog
+
+<span class="hljs-comment"># &#x30D5;&#x30A1;&#x30A4;&#x30EB;&#x306E;&#x5185;&#x5BB9;&#x3092;&#x76E3;&#x8996;&#x3057;&#x3001;&#x8868;&#x793A;&#x3092;&#x66F4;&#x65B0;&#x3059;&#x308B;</span>
+$ tail <span class="hljs-_">-f</span> /var/<span class="hljs-built_in">log</span>/maillog</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="02_user.html" class="navigation navigation-prev " aria-label="Previous page: ユーザー操作">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="04_vi.html" class="navigation navigation-next " aria-label="Next page: vi でファイルを編集する">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"ファイル操作","level":"1.4","depth":1,"next":{"title":"vi でファイルを編集する","level":"1.5","depth":1,"path":"base/04_vi.md","ref":"base/04_vi.md","articles":[]},"previous":{"title":"ユーザー操作","level":"1.3","depth":1,"path":"base/02_user.md","ref":"base/02_user.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"base/03_file.md","mtime":"2016-10-26T04:09:43.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-10-26T04:17:40.781Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

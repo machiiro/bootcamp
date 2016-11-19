@@ -1,10 +1,10 @@
 # jQuery とは
 
+<img src="img/01_01.png" width="300">
+
 jQuery は、Chrome や Firefox 等の 各 Web ブラウザの仕様の差異を吸収し、統一的な API で JavaScript 開発を行うためのライブラリです。
 
 [John Resig](http://ejohn.org/) という神プログラマーによって2006年に公開されました。
-
-![01_01](img/01_01.png)
 
 ## jQuery の特徴
 
@@ -34,7 +34,7 @@ http://qiita.com/tatesuke/items/b9548dd484b01b139b74
 1. 品質の低く、メンテナンスのされていないプラグインの乱立
 
 一般的な Web サイトをコーディングする場合は利用しても問題ありませんが、
-大規模なサイトを構築する場合は React/Vue.js/Riot.js...といったフレームワークの利用を検討する必要があります。
+大規模なサイトを構築する場合は React.js/AngularJS/Vue.js/Riot.js...といったフレームワークの利用を検討する必要があります。
 
 ## jQuery の利用方法
 

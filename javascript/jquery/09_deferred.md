@@ -15,7 +15,7 @@ jQuery には非同期処理を扱うための Deferred というモジュール
 非同期処理が完了したら `Deferred#resolve` や `Deferred#reject` を実行すると、Promise オブジェクトの状態が変化し、登録されていたコールバック関数が呼び出される、という仕組みです。
 
 ```javascript
-var func = function() {
+var callAsync = function() {
   var deferred = $.Deferred();
 
   // setTimeout で非同期処理をエミュレート
@@ -34,7 +34,7 @@ var func = function() {
   return deferred.promise();
 }
 
-func()
+callAsync()
   .then(function() {
     console.log('処理完了時に実行');
   })
@@ -55,17 +55,17 @@ func()
 このようなコーディングをコールバック地獄と呼びます。
 
 ```javascript
-var func = function(callback) {
+var callAsync = function(callback) {
   setTimeout(function() {
     callback.call(this);
   }, 1000);
 };
 
-func(function() {
+callAsync(function() {
   console.log('success 1');
-  func(function() {
+  callAsync(function() {
     console.log('success 2');
-    func(function() {
+    callAsync(function() {
       console.log('success 3');
     });
   });
@@ -75,7 +75,7 @@ func(function() {
 Deferred を利用すると以下のように記述することができます。
 
 ```javascript
-var func = function(callback) {
+var callAsync = function(callback) {
   var deferred = $.Deferred();
 
   setTimeout(function() {
@@ -85,14 +85,14 @@ var func = function(callback) {
   return deferred;
 };
 
-func()
+callAsync()
   .then(function() {
     console.log('success1');
-    return func();
+    return callAsync();
   })
   .then(function() {
     console.log('success2');
-    return func();
+    return callAsync();
   })
   .then(function() {
     console.log('success3');
@@ -104,7 +104,7 @@ func()
 `$.when` を利用すると、非同期処理を並列実行することが可能です。
 
 ```javascript
-var func = function(callback) {
+var callAsync = function(callback) {
   var deferred = $.Deferred();
 
   setTimeout(function() {
@@ -116,8 +116,8 @@ var func = function(callback) {
 };
 
 $.when(
-  func(),
-  func()
+  callAsync(),
+  callAsync()
 ).done(function() {
   console.log('end');
 });

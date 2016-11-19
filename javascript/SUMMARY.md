@@ -20,5 +20,15 @@
   * [イベント](clientside/06_event.md)
   * [XMLHttpRequest](clientside/07_xml_http_request.md)
   * [HTML5 API](clientside/08_html5.md)
-* jQuery
+* [jQuery](jquery/README.md)
+  * [jQuery とは](jquery/01_about.md)
+  * [セレクタ](jquery/02_selector.md)
+  * [横断操作](jquery/03_traversing.md)
+  * [属性操作](jquery/04_attr.md)
+  * [データ操作](jquery/05_data.md)
+  * [CSS操作](jquery/06_css.md)
+  * [イベント](jquery/07_event.md)
+  * [Ajax](jquery/08_ajax.md)
+  * [Deferred](jquery/09_deferred.md)
+  * [プラグイン](jquery/10_plugin.md)
 * ES2015

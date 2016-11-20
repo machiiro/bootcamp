@@ -29,6 +29,6 @@
   * [CSS操作](jquery/06_css.md)
   * [イベント](jquery/07_event.md)
   * [Ajax](jquery/08_ajax.md)
-  * [Deferred](jquery/09_deferred.md)
+  * [Deferred/Promise](jquery/09_deferred.md)
   * [プラグイン](jquery/10_plugin.md)
 * ES2015

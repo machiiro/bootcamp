@@ -1,4 +1,4 @@
-# Deferred
+# Deferred/Promise
 
 jQuery には非同期処理を扱うための Deferred というモジュールが用意されています。  
 
@@ -10,7 +10,8 @@ jQuery には非同期処理を扱うための Deferred というモジュール
 
 ## 利用方法
 
-`Deferred#promise` で Promise オブジェクトを返却し、呼び出し側に処理成功・失敗時に実行したい関数を登録してもらいます。
+`Deferred#promise` を実行すると Promise オブジェクトを返却します。
+呼び出し側はこの Promise オブジェクトに処理成功・失敗時に実行したい関数を登録します。
 
 非同期処理が完了したら `Deferred#resolve` や `Deferred#reject` を実行すると、Promise オブジェクトの状態が変化し、登録されていたコールバック関数が呼び出される、という仕組みです。
 
@@ -48,6 +49,10 @@ callAsync()
     console.log('常に実行');
   });
 ```
+
+Deferred/Promise の関係については、以下のサイトを参照してください。
+
+- [DeferredとPromise](http://azu.github.io/promises-book/#deferred-and-promise)
 
 ## 直列実行
 

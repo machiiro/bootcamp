@@ -4,3 +4,4 @@
 
 - サイト
   - [jQuery 公式サイト](http://jquery.com/)
+  - [JavaScript Promiseの本](http://azu.github.io/promises-book)

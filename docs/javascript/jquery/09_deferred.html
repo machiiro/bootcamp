@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html lang="" >
     <head>
-        <title>Deferred · GitBook</title>
+        <title>Deferred/Promise · GitBook</title>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -484,7 +484,7 @@
                 <a href="09_deferred.html">
             
                     
-                    Deferred
+                    Deferred/Promise
             
                 </a>
             
@@ -553,7 +553,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Deferred</a>
+        <a href=".." >Deferred/Promise</a>
     </h1>
 </div>
 
@@ -568,9 +568,10 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="deferred">Deferred</h1><p>jQuery &#x306B;&#x306F;&#x975E;&#x540C;&#x671F;&#x51E6;&#x7406;&#x3092;&#x6271;&#x3046;&#x305F;&#x3081;&#x306E; Deferred &#x3068;&#x3044;&#x3046;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x304C;&#x7528;&#x610F;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p><p>&#x975E;&#x540C;&#x671F;&#x51E6;&#x7406;&#x304C;&#x8907;&#x6570;&#x9023;&#x7D50;&#x3055;&#x308C;&#x308B;&#x3088;&#x3046;&#x306A;&#x30B1;&#x30FC;&#x30B9;&#x3067;&#x306F;&#x3001;&#x3044;&#x308F;&#x3086;&#x308B;&#x30B3;&#x30FC;&#x30EB;&#x30D0;&#x30C3;&#x30AF;&#x5730;&#x7344;&#x3068;&#x547C;&#x3070;&#x308C;&#x308B;&#x30B3;&#x30FC;&#x30C7;&#x30A3;&#x30F3;&#x30B0;&#x304C;&#x5FC5;&#x8981;&#x3068;&#x306A;&#x308A;&#x307E;&#x3059;&#x304C;&#x3001;Deferred &#x3092;&#x5229;&#x7528;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x30B7;&#x30F3;&#x30D7;&#x30EB;&#x306B;&#x8A18;&#x8FF0;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x53EF;&#x80FD;&#x3067;&#x3059;&#x3002;</p><p>&#x524D;&#x7AE0;&#x3067;&#x5B66;&#x3093;&#x3060; <code>$.get</code>&#x3001;<code>$.post</code>&#x3001;<code>$.ajax</code> &#x306F;&#x5B9F;&#x306F;&#x3053;&#x306E; Deferred &#x304C;&#x5229;&#x7528;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p><ul><li><a href="http://api.jquery.com/category/deferred-object/" target="_blank">Deferred Object</a>
+                                <h1 id="deferredpromise">Deferred/Promise</h1><p>jQuery &#x306B;&#x306F;&#x975E;&#x540C;&#x671F;&#x51E6;&#x7406;&#x3092;&#x6271;&#x3046;&#x305F;&#x3081;&#x306E; Deferred &#x3068;&#x3044;&#x3046;&#x30E2;&#x30B8;&#x30E5;&#x30FC;&#x30EB;&#x304C;&#x7528;&#x610F;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p><p>&#x975E;&#x540C;&#x671F;&#x51E6;&#x7406;&#x304C;&#x8907;&#x6570;&#x9023;&#x7D50;&#x3055;&#x308C;&#x308B;&#x3088;&#x3046;&#x306A;&#x30B1;&#x30FC;&#x30B9;&#x3067;&#x306F;&#x3001;&#x3044;&#x308F;&#x3086;&#x308B;&#x30B3;&#x30FC;&#x30EB;&#x30D0;&#x30C3;&#x30AF;&#x5730;&#x7344;&#x3068;&#x547C;&#x3070;&#x308C;&#x308B;&#x30B3;&#x30FC;&#x30C7;&#x30A3;&#x30F3;&#x30B0;&#x304C;&#x5FC5;&#x8981;&#x3068;&#x306A;&#x308A;&#x307E;&#x3059;&#x304C;&#x3001;Deferred &#x3092;&#x5229;&#x7528;&#x3059;&#x308B;&#x3053;&#x3068;&#x3067;&#x30B7;&#x30F3;&#x30D7;&#x30EB;&#x306B;&#x8A18;&#x8FF0;&#x3059;&#x308B;&#x3053;&#x3068;&#x304C;&#x53EF;&#x80FD;&#x3067;&#x3059;&#x3002;</p><p>&#x524D;&#x7AE0;&#x3067;&#x5B66;&#x3093;&#x3060; <code>$.get</code>&#x3001;<code>$.post</code>&#x3001;<code>$.ajax</code> &#x306F;&#x5B9F;&#x306F;&#x3053;&#x306E; Deferred &#x304C;&#x5229;&#x7528;&#x3055;&#x308C;&#x3066;&#x3044;&#x307E;&#x3059;&#x3002;</p><ul><li><a href="http://api.jquery.com/category/deferred-object/" target="_blank">Deferred Object</a>
 </li></ul>
-<h2 id="&#x5229;&#x7528;&#x65B9;&#x6CD5;">&#x5229;&#x7528;&#x65B9;&#x6CD5;</h2><p><code>Deferred#promise</code> &#x3067; Promise &#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x8FD4;&#x5374;&#x3057;&#x3001;&#x547C;&#x3073;&#x51FA;&#x3057;&#x5074;&#x306B;&#x51E6;&#x7406;&#x6210;&#x529F;&#x30FB;&#x5931;&#x6557;&#x6642;&#x306B;&#x5B9F;&#x884C;&#x3057;&#x305F;&#x3044;&#x95A2;&#x6570;&#x3092;&#x767B;&#x9332;&#x3057;&#x3066;&#x3082;&#x3089;&#x3044;&#x307E;&#x3059;&#x3002;</p><p>&#x975E;&#x540C;&#x671F;&#x51E6;&#x7406;&#x304C;&#x5B8C;&#x4E86;&#x3057;&#x305F;&#x3089; <code>Deferred#resolve</code> &#x3084; <code>Deferred#reject</code> &#x3092;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x3068;&#x3001;Promise &#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x72B6;&#x614B;&#x304C;&#x5909;&#x5316;&#x3057;&#x3001;&#x767B;&#x9332;&#x3055;&#x308C;&#x3066;&#x3044;&#x305F;&#x30B3;&#x30FC;&#x30EB;&#x30D0;&#x30C3;&#x30AF;&#x95A2;&#x6570;&#x304C;&#x547C;&#x3073;&#x51FA;&#x3055;&#x308C;&#x308B;&#x3001;&#x3068;&#x3044;&#x3046;&#x4ED5;&#x7D44;&#x307F;&#x3067;&#x3059;&#x3002;</p><pre><code class="lang-javascript"><span class="hljs-keyword">var</span> callAsync = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+<h2 id="&#x5229;&#x7528;&#x65B9;&#x6CD5;">&#x5229;&#x7528;&#x65B9;&#x6CD5;</h2><p><code>Deferred#promise</code> &#x3092;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x3068; Promise &#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x8FD4;&#x5374;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x547C;&#x3073;&#x51FA;&#x3057;&#x5074;&#x306F;&#x3053;&#x306E; Promise &#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306B;&#x51E6;&#x7406;&#x6210;&#x529F;&#x30FB;&#x5931;&#x6557;&#x6642;&#x306B;&#x5B9F;&#x884C;&#x3057;&#x305F;&#x3044;&#x95A2;&#x6570;&#x3092;&#x767B;&#x9332;&#x3057;&#x307E;&#x3059;&#x3002;</p><p>&#x975E;&#x540C;&#x671F;&#x51E6;&#x7406;&#x304C;&#x5B8C;&#x4E86;&#x3057;&#x305F;&#x3089; <code>Deferred#resolve</code> &#x3084; <code>Deferred#reject</code> &#x3092;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x3068;&#x3001;Promise &#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x72B6;&#x614B;&#x304C;&#x5909;&#x5316;&#x3057;&#x3001;&#x767B;&#x9332;&#x3055;&#x308C;&#x3066;&#x3044;&#x305F;&#x30B3;&#x30FC;&#x30EB;&#x30D0;&#x30C3;&#x30AF;&#x95A2;&#x6570;&#x304C;&#x547C;&#x3073;&#x51FA;&#x3055;&#x308C;&#x308B;&#x3001;&#x3068;&#x3044;&#x3046;&#x4ED5;&#x7D44;&#x307F;&#x3067;&#x3059;&#x3002;</p><pre><code class="lang-javascript"><span class="hljs-keyword">var</span> callAsync = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
   <span class="hljs-keyword">var</span> deferred = $.Deferred();
 
   <span class="hljs-comment">// setTimeout &#x3067;&#x975E;&#x540C;&#x671F;&#x51E6;&#x7406;&#x3092;&#x30A8;&#x30DF;&#x30E5;&#x30EC;&#x30FC;&#x30C8;</span>
@@ -602,6 +603,8 @@ callAsync()
   .always(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;&#x5E38;&#x306B;&#x5B9F;&#x884C;&apos;</span>);
   });</code></pre>
+<p>Deferred/Promise &#x306E;&#x95A2;&#x4FC2;&#x306B;&#x3064;&#x3044;&#x3066;&#x306F;&#x3001;&#x4EE5;&#x4E0B;&#x306E;&#x30B5;&#x30A4;&#x30C8;&#x3092;&#x53C2;&#x7167;&#x3057;&#x3066;&#x304F;&#x3060;&#x3055;&#x3044;&#x3002;</p><ul><li><a href="http://azu.github.io/promises-book/#deferred-and-promise" target="_blank">Deferred&#x3068;Promise</a>
+</li></ul>
 <h2 id="&#x76F4;&#x5217;&#x5B9F;&#x884C;">&#x76F4;&#x5217;&#x5B9F;&#x884C;</h2><p>&#x975E;&#x540C;&#x671F;&#x51E6;&#x7406;&#x3092;&#x76F4;&#x5217;&#x5B9F;&#x884C;&#x3059;&#x308B;&#x5834;&#x5408;&#x3001;Deferred &#x3092;&#x5229;&#x7528;&#x3057;&#x306A;&#x3044;&#x3068;&#x30B3;&#x30FC;&#x30EB;&#x30D0;&#x30C3;&#x30AF;&#x51E6;&#x7406;&#x304C;&#x30CD;&#x30B9;&#x30C8;&#x3057;&#x3066;&#x3057;&#x307E;&#x3044;&#x307E;&#x3059;&#x3002;
 &#x3053;&#x306E;&#x3088;&#x3046;&#x306A;&#x30B3;&#x30FC;&#x30C7;&#x30A3;&#x30F3;&#x30B0;&#x3092;&#x30B3;&#x30FC;&#x30EB;&#x30D0;&#x30C3;&#x30AF;&#x5730;&#x7344;&#x3068;&#x547C;&#x3073;&#x307E;&#x3059;&#x3002;</p><pre><code class="lang-javascript"><span class="hljs-keyword">var</span> callAsync = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">callback</span>) </span>{
   setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
@@ -700,7 +703,7 @@ $.when(
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Deferred","level":"1.4.9","depth":2,"next":{"title":"プラグイン","level":"1.4.10","depth":2,"path":"jquery/10_plugin.md","ref":"jquery/10_plugin.md","articles":[]},"previous":{"title":"Ajax","level":"1.4.8","depth":2,"path":"jquery/08_ajax.md","ref":"jquery/08_ajax.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"jquery/09_deferred.md","mtime":"2016-11-19T14:14:18.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-11-19T14:26:47.532Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Deferred/Promise","level":"1.4.9","depth":2,"next":{"title":"プラグイン","level":"1.4.10","depth":2,"path":"jquery/10_plugin.md","ref":"jquery/10_plugin.md","articles":[]},"previous":{"title":"Ajax","level":"1.4.8","depth":2,"path":"jquery/08_ajax.md","ref":"jquery/08_ajax.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"jquery/09_deferred.md","mtime":"2016-11-20T13:07:17.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-11-20T13:44:32.606Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -484,7 +484,7 @@
                 <a href="09_deferred.html">
             
                     
-                    Deferred
+                    Deferred/Promise
             
                 </a>
             
@@ -568,7 +568,37 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x6A2A;&#x65AD;&#x64CD;&#x4F5C;">&#x6A2A;&#x65AD;&#x64CD;&#x4F5C;</h1><p>&#x672C;&#x7AE0;&#x3067;&#x306F;&#x53D6;&#x5F97;&#x3057;&#x305F; jQuery &#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x8D77;&#x70B9;&#x3068;&#x3057;&#x305F;&#x6A2A;&#x65AD;&#x64CD;&#x4F5C;&#x3092;&#x8AAC;&#x660E;&#x3057;&#x307E;&#x3059;&#x3002;</p><p><code>javascript</code></p>
+                                <h1 id="&#x6A2A;&#x65AD;&#x64CD;&#x4F5C;">&#x6A2A;&#x65AD;&#x64CD;&#x4F5C;</h1><p>&#x672C;&#x7AE0;&#x3067;&#x306F;&#x53D6;&#x5F97;&#x3057;&#x305F; jQuery &#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x3092;&#x8D77;&#x70B9;&#x3068;&#x3057;&#x305F;&#x6A2A;&#x65AD;&#x64CD;&#x4F5C; (Traversing) &#x3092;&#x8AAC;&#x660E;&#x3057;&#x307E;&#x3059;&#x3002;</p><h2 id="each">each</h2><p>&#x53D6;&#x5F97;&#x3057;&#x305F;&#x8981;&#x7D20;&#x306B;&#x5BFE;&#x3057;&#x3066;&#x95A2;&#x6570;&#x3092;&#x5B9F;&#x884C;&#x3057;&#x307E;&#x3059;&#x3002;</p><pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;section&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>A<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+        B
+        <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>b1<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>b2<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>C<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+<pre><code class="lang-javascript">$(<span class="hljs-string">&apos;ul &gt; li&apos;</span>).each(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// `this` &#x306B;&#x306F;&#x5BFE;&#x8C61;&#x306E;&#x8981;&#x7D20;&#x81EA;&#x4F53;&#x304C;&#x683C;&#x7D0D;&#x3055;&#x308C;&#x3066;&#x304A;&#x308A;&#x3001;&#x5FC5;&#x8981;&#x306B;&#x5FDC;&#x3058;&#x3066; jQuery &#x30AA;&#x30D6;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306B;&#x5909;&#x63DB;&#x3059;&#x308B;&#x5FC5;&#x8981;&#x304C;&#x3042;&#x308B;</span>
+  <span class="hljs-built_in">console</span>.log($(<span class="hljs-keyword">this</span>));
+});</code></pre>
+<h2 id="find">find</h2><p>&#x53D6;&#x5F97;&#x3057;&#x305F;&#x8981;&#x7D20;&#x3092;&#x8D77;&#x70B9;&#x306B;&#x3001;&#x914D;&#x4E0B;&#x306E;&#x8981;&#x7D20;&#x3092;&#x691C;&#x7D22;&#x3057;&#x307E;&#x3059;&#x3002;</p><pre><code class="lang-javascript"><span class="hljs-built_in">console</span>.log($(<span class="hljs-string">&apos;#section&apos;</span>).find(<span class="hljs-string">&apos;ul&apos;</span>));</code></pre>
+<h2 id="firstlast">first/last</h2><p>&#x53D6;&#x5F97;&#x3057;&#x305F;&#x8981;&#x7D20;&#x3092;&#x8D77;&#x70B9;&#x306B;&#x3001;&#x5148;&#x982D;&#x307E;&#x305F;&#x306F;&#x672B;&#x5C3E;&#x306E;&#x8981;&#x7D20;&#x3092;&#x53D6;&#x5F97;&#x3057;&#x307E;&#x3059;&#x3002;</p><pre><code class="lang-javascript"><span class="hljs-built_in">console</span>.log($(<span class="hljs-string">&apos;ul &gt; li&apos;</span>).first());
+<span class="hljs-built_in">console</span>.log($(<span class="hljs-string">&apos;ul &gt; li&apos;</span>).last());</code></pre>
+<h2 id="prevnextsiblings">prev/next/siblings</h2><p>&#x53D6;&#x5F97;&#x3057;&#x305F;&#x8981;&#x7D20;&#x3092;&#x8D77;&#x70B9;&#x306B;&#x3001;&#x5144;&#x5F1F;&#x8981;&#x7D20;&#x306E;&#x8981;&#x7D20;&#x3092;&#x53D6;&#x5F97;&#x3057;&#x307E;&#x3059;&#x3002;
+&#x8981;&#x7D20;&#x306E;&#x4E26;&#x3073;&#x304C;&#x65E9;&#x3044;&#x65B9;&#x3092;&#x5144;&#x3001;&#x9045;&#x3044;&#x65B9;&#x3092;&#x5F1F;&#x3068;&#x547C;&#x3073;&#x307E;&#x3059;&#x3002;</p><pre><code class="lang-javascript"><span class="hljs-built_in">console</span>.log($(<span class="hljs-string">&apos;ul &gt; li:eq(1)&apos;</span>).prev());     <span class="hljs-comment">// &#x524D;&#x306E;&#x8981;&#x7D20; (&#x5144;) &#x3092;&#x53D6;&#x5F97;</span>
+<span class="hljs-built_in">console</span>.log($(<span class="hljs-string">&apos;ul &gt; li:eq(1)&apos;</span>).next());     <span class="hljs-comment">// &#x6B21;&#x306E;&#x8981;&#x7D20; (&#x5F1F;) &#x3092;&#x53D6;&#x5F97;</span>
+<span class="hljs-built_in">console</span>.log($(<span class="hljs-string">&apos;ul &gt; li:eq(1)&apos;</span>).siblings()); <span class="hljs-comment">// &#x81EA;&#x8EAB;&#x3092;&#x9664;&#x3044;&#x305F;&#x5144;&#x5F1F;&#x8981;&#x7D20;&#x306E;&#x30EA;&#x30B9;&#x30C8;&#x3092;&#x53D6;&#x5F97;</span></code></pre>
+<h2 id="closestparentparents">closest/parent/parents</h2><p>&#x53D6;&#x5F97;&#x3057;&#x305F;&#x8981;&#x7D20;&#x3092;&#x8D77;&#x70B9;&#x306B;&#x3001;&#x89AA;&#x8981;&#x7D20;&#x3092;&#x53D6;&#x5F97;&#x3057;&#x307E;&#x3059;&#x3002;</p><pre><code class="lang-javascript"><span class="hljs-built_in">console</span>.log($(<span class="hljs-string">&apos;ul&apos;</span>).parent(<span class="hljs-string">&apos;div&apos;</span>));  <span class="hljs-comment">// &#x76F4;&#x8FD1;&#x306E;&#x89AA;&#x8981;&#x7D20;&#x3092;&#x53D6;&#x5F97;</span>
+<span class="hljs-built_in">console</span>.log($(<span class="hljs-string">&apos;ul&apos;</span>).parents(<span class="hljs-string">&apos;div&apos;</span>)); <span class="hljs-comment">// &#x89AA;&#x8981;&#x7D20;&#x306E;&#x30EA;&#x30B9;&#x30C8;&#x3092;&#x53D6;&#x5F97;</span>
+<span class="hljs-built_in">console</span>.log($(<span class="hljs-string">&apos;ul&apos;</span>).closest(<span class="hljs-string">&apos;div&apos;</span>)); <span class="hljs-comment">// &#x8D77;&#x70B9;&#x304B;&#x3089;&#x4E00;&#x756A;&#x8FD1;&#x3044;&#x8981;&#x7D20;&#x3092;&#x53D6;&#x5F97;</span></code></pre>
+<h2 id="has">has</h2><p>&#x53D6;&#x5F97;&#x3057;&#x305F;&#x8981;&#x7D20;&#x3092;&#x8D77;&#x70B9;&#x306B;&#x3001;&#x30BB;&#x30EC;&#x30AF;&#x30BF;&#x30FC;&#x306B;&#x4E00;&#x81F4;&#x3059;&#x308B;&#x8981;&#x7D20;&#x3092;&#x6301;&#x3064;&#x8981;&#x7D20;&#x3092;&#x53D6;&#x5F97;&#x3057;&#x307E;&#x3059;&#x3002;</p><pre><code class="lang-javascript"><span class="hljs-built_in">console</span>.log($(<span class="hljs-string">&apos;div &gt; ul &gt; li&apos;</span>).has(<span class="hljs-string">&apos;ul&apos;</span>));</code></pre>
+
                                 
                                 </section>
                             
@@ -611,7 +641,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"横断操作","level":"1.4.3","depth":2,"next":{"title":"属性操作","level":"1.4.4","depth":2,"path":"jquery/04_attr.md","ref":"jquery/04_attr.md","articles":[]},"previous":{"title":"セレクタ","level":"1.4.2","depth":2,"path":"jquery/02_selector.md","ref":"jquery/02_selector.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"jquery/03_traversing.md","mtime":"2016-11-19T02:23:14.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-11-19T14:26:47.532Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"横断操作","level":"1.4.3","depth":2,"next":{"title":"属性操作","level":"1.4.4","depth":2,"path":"jquery/04_attr.md","ref":"jquery/04_attr.md","articles":[]},"previous":{"title":"セレクタ","level":"1.4.2","depth":2,"path":"jquery/02_selector.md","ref":"jquery/02_selector.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"jquery/03_traversing.md","mtime":"2016-11-20T13:44:19.000Z","type":"markdown"},"gitbook":{"version":"3.2.0","time":"2016-11-20T13:44:32.606Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

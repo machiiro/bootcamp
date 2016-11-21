@@ -2,6 +2,8 @@
 
 本章では取得した jQuery オブジェクトを起点とした横断操作 (Traversing) を説明します。
 
+- [Traversing](http://api.jquery.com/category/traversing/)
+
 ## each
 
 取得した要素に対して関数を実行します。

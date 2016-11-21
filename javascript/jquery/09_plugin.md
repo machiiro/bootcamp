@@ -5,7 +5,7 @@ jQuery にはプラグイン機構があり、様々なプラグインが公開�
 以前はプラグインの提供方法がルール化されていなかったため、身元不明な野良プラグインが当たり前でしたが、現在ではプラグインのレジストリが用意されています。
 利用したいプラグインがある場合は、こちらに登録されているか確認したほうが良いでしょう。
 
-- [ jQuery Plugin Registry](https://plugins.jquery.com/)
+- [jQuery Plugin Registry](https://plugins.jquery.com/)
 
 ## プラグインの選定ポイント
 

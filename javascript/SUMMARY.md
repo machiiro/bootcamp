@@ -31,4 +31,11 @@
   * [Deferred/Promise](jquery/08_deferred.md)
   * [プラグイン](jquery/09_plugin.md)
   * [コーディングガイドライン](jquery/10_guideline.md)
-* ES2015
+* [ES2015](esnext/README.md)
+  * [ES2015 とは](esnext/01_about.md)
+  * [トランスパイラ](esnext/02_transpiler.md)
+  * [変数・リテラル](esnext/03_variable.md)
+  * [関数](esnext/04_function.md)
+  * [クラス](esnext/05_class.md)
+  * [モジュール](esnext/06_module.md)
+  * [マップ](esnext/07_map.md)

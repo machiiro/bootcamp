@@ -1,6 +1,6 @@
-# jQuery とは
-
 <img src="img/01_01.png" width="300">
+
+# jQuery とは
 
 jQuery は、Chrome や Firefox 等の 各 Web ブラウザの仕様の差異を吸収し、統一的な API で JavaScript 開発を行うためのライブラリです。
 

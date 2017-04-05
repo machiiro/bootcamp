@@ -78,6 +78,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 ## その他のプリセット・ライブラリ
 
+### babel-preset-latest
+
+ES2015 だけではなく、ES2016 や ES2017 ... などの最新仕様を利用することが可能です。
+
 ### babel-preset-env
 
 実行環境を定義するだけで、環境で利用可能な仕様を自動判定してライブラリを選定・コード変換を行ってくれます。
